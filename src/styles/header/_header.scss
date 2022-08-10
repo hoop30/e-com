@@ -41,5 +41,11 @@
 }
 
 .bottom-nav {
-    visibility: hidden;
+    transition: transform 0.3s ease-out,
+        opacity 0.3s ease-out;
+
+    &.hidden {
+        opacity: 0;
+        transform: translateY(10px);
+    }
 }

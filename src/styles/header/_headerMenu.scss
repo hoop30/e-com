@@ -1,0 +1,31 @@
+.headerMenu {
+
+    & ul {
+        padding: 0 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & li {
+        width: 300px;
+        height: 50px;
+        padding: 0 10px 0 20px;
+        background: var(--light);
+        border-bottom: solid 1px var(--white75);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        top: -45px;
+
+        & svg {
+            opacity: 60%;
+        }
+
+        & a {
+            font-weight: 500;
+            color: var(--white);
+        }
+    }
+}

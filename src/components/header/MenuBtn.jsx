@@ -1,15 +1,6 @@
 import React from 'react'
-import { useState } from 'react'
 
-export function MenuBtn() {
-
-    const [menuBtnClass, setMenuBtnClass] = useState(true)
-    let btnClass = "menuBtn"
-    menuBtnClass ? btnClass = "menuBtn" : btnClass = "menuBtn active"
-
-    function userClick() {
-        setMenuBtnClass(!menuBtnClass)
-    }
+export function MenuBtn({btnClass, userClick}) {
 
     return (
         <button className={btnClass} type="button" aria-label="Toggle navigation" onClick={userClick}>

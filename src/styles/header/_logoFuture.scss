@@ -1,5 +1,12 @@
 .logo-future {
     padding: 5px;
-    height: 45px;
+    padding-left: 10px;
+    height: 100%;
     width: 45px;
+    border-left: solid 1px var(--white75);
+
+    & img {
+        width: auto;
+        height: 100%;
+    }
 }

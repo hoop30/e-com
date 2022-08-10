@@ -1,19 +1,24 @@
 import React from 'react'
+import { BsThreeDots } from "react-icons/bs";
 
 export function HeaderMenu() {
     return (
-        <ul className="">
-            <li className="">
-                <a className="" aria-current="page" href="index.css">Produit</a>
+        <ul className='headerMenu'>
+            <li>
+                <a aria-current="page" href="index.css">Produit</a>
+                <BsThreeDots size="2em" color='#ffd1b3'/>
             </li>
-            <li className="n">
-                <a className="" href="index.css">Promotions</a>
+            <li>
+                <a href="index.css">Promotions</a>
+                <BsThreeDots size="2em" color='#ffd1b3'/>
             </li>
-            <li className="">
-                <a className="" href="index.css">Contact</a>
+            <li>
+                <a href="index.css">Contact</a>
+                <BsThreeDots size="2em" color='#ffd1b3'/>
             </li>
-            <li className="">
-                <a className="" href="index.css">Aide</a>
+            <li>
+                <a href="index.css">Aide</a>
+                <BsThreeDots size="2em" color='#ffd1b3'/>
             </li>
         </ul>
     )
