@@ -1,5 +1,10 @@
 @use 'styles/variables';
-@use 'styles/header';
+@use 'styles/header/header';
+@use 'styles/header/headerMenu';
+@use 'styles/header/searchBar';
+@use 'styles/header/menuUserCart';
+@use 'styles/header/menuBtn';
+@use 'styles/header/logoFuture';
 
 *,
 body {

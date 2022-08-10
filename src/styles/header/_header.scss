@@ -1,0 +1,45 @@
+.nav-bar {
+    display: grid;
+    width: 100%;
+    height: 90px;
+    grid-template-rows: 100% 0%;
+    grid-template-areas:
+
+        "bottom-nav""top-nav";
+}
+
+.top-nav {
+    display: grid;
+    width: 100%;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+        "left right"
+        "searchbar searchbar";
+    background: var(--main);
+
+    &>.left {
+        grid-area: left;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &>.right {
+        grid-area: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &>.searchbar {
+        grid-area: searchbar;
+        width: 100%;
+        height: 100%;
+        padding: 0 5px 5px 5px;
+    }
+}
+
+.bottom-nav {
+    visibility: hidden;
+}
