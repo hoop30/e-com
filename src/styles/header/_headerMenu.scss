@@ -10,12 +10,10 @@
     & li {
         width: 300px;
         height: 50px;
-        padding: 0 10px 0 20px;
+
         background: var(--light);
         border-bottom: solid 1px var(--white75);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+
         position: relative;
         top: -45px;
 
@@ -24,8 +22,19 @@
         }
 
         & a {
+            padding: 0 10px 0 20px;
             font-weight: 500;
             color: var(--white);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        &:hover {
+            filter: brightness(115%);
         }
     }
 }
