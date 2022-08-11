@@ -1,8 +1,45 @@
 .menuRight {
+    display: flex;
+    height: 100%;
 
-    & > svg {
-        padding: 12px 8px 7px 8px;
+    & > .menuRightLogo {
+        padding: 5px 8px;
         border-left: solid 1px var(--white75);
         cursor: pointer;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        & > p {
+            font-size: 0.5em;
+            font-weight: 600;
+            text-align: center;
+            width: 100%;
+            color: var(--grey);
+            transition: 0.05s ease-out;
+
+            @media screen and (max-width: 480px) {
+                display: none;
+            }
+        }
+        
+        &:hover {
+            
+            & > p {
+                color: var(--white);
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            justify-content: flex-end;
+            gap: 5px;
+            align-items: center;
+            border: none;
+            padding: 0 15px 5px 15px;
+
+            & > p {
+                font-size: 0.7em;
+            }
+        }
     }
 }

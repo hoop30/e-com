@@ -1,30 +1,59 @@
 form {
-    display: flex;
     height: 100%;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-areas: 
+        "searchInput searchBtn";
 
     &>.searchForm {
-        padding: 15px;
+        grid-area: searchInput;
+        padding-left: 15px;
         background: var(--white);
         border: none;
         width: 100%;
-        height: 100%;
-    }
-}
+        height: 90%;
 
-.searchBtn {
-    background: var(--white);
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    &>svg#searchBtn {
-        padding-left: 5px;
-        transform: rotateY(180deg);
-
-        &:hover {
-            filter: brightness(60%);
+        &:focus {
+            outline: none;
         }
+
+        @media screen and (min-width: 480px) {
+            height: 100%;
+        }
+        @media screen and (min-width: 1024px) {
+            height: 50%;
+        }
+    }
+
+    &>.searchBtn {
+        height: 90%;
+        grid-area: searchBtn;
+        background: var(--white);
+        border: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        cursor: pointer;
+
+        &>svg#searchBtn {
+            transform: rotateY(180deg);
+
+            &:hover {
+                filter: brightness(60%);
+            }
+        }
+
+        @media screen and (min-width: 480px) {
+            height: 100%;
+        }
+
+        @media screen and (min-width: 1024px) {
+            //width: 100%;
+            height: 50%;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        align-items: center;
     }
 }

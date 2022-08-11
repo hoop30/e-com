@@ -2,11 +2,17 @@
     padding: 5px;
     padding-left: 10px;
     height: 100%;
-    width: 45px;
+    width: 80px;
     border-left: solid 1px var(--white75);
+    display: flex;
+    justify-content: center;
 
     & img {
         width: auto;
         height: 100%;
+    }
+
+    @media screen and (min-width: 1024px) {
+        border: none;
     }
 }
