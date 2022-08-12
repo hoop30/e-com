@@ -1,21 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { MenuBtn } from "./MenuBtn";
 import { LogoFuture } from "./LogoFuture";
 import { SearchBar } from "./SearchBar";
 import { MenuRight } from "./MenuRight";
-import { HeaderMenu } from "./HeaderMenu";
+// import { HeaderMenu } from "./HeaderMenu";
 
 export function Header() {
 
-    const [menuBtnClass, setMenuBtnClass] = useState(true)
-    let btnClass = "menuBtn"
-    let headerMenuClass = "bottom-nav hidden"
-    menuBtnClass ? btnClass = "menuBtn" : btnClass = "menuBtn active"
-    menuBtnClass ? headerMenuClass = "bottom-nav hidden" : headerMenuClass = "bottom-nav"
-
-    function userClick() {
-        setMenuBtnClass(!menuBtnClass)
-    }
+    
 
     return (
         <header>
@@ -25,7 +17,7 @@ export function Header() {
                     <div className='top-nav'>
 
                         <div className='left'>
-                            <MenuBtn btnClass={btnClass} userClick={userClick} />
+                            <MenuBtn />
                             <LogoFuture />
                         </div>
 
@@ -41,8 +33,8 @@ export function Header() {
                 </div>
 
                 <div className="bottom">
-                    <div className={headerMenuClass}>
-                        <HeaderMenu />
+                    <div className="headerMenu">
+                        {/* <HeaderMenu /> */}
                     </div>
                 </div>
 

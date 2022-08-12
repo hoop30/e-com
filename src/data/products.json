@@ -1,0 +1,19 @@
+{
+        "Imformatique": {
+            "Ordinateur fixe": [],
+            "Portables": [],
+            "Périphériques": []
+        },
+        "Photo": {
+            "Appareil photo": [],
+            "Périphériques": []
+        },
+        "Téléphonie": {
+            "Mobile": [],
+            "Fixe": []
+        },
+        "Vidéo": {
+            "Caméra sportive": [],
+            "Caméra connéctée": []
+        }
+}
