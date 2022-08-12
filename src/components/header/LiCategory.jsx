@@ -1,20 +1,38 @@
 import React from 'react'
 import products from "../../data/products.json"
 import { BsThreeDots } from "react-icons/bs"
+import { useState } from 'react'
+import { IoIosArrowBack } from "react-icons/io";
 
 
-export function LiCategory() {
+export function LiCategory({ reset }) {
     let categorys = []
     let i = 0
 
-    for (const category in products) {
+    console.log(reset);
+    const [liListe, setLislist] = useState(products)
+
+    function liListeset(e) {
+        setLislist(products[e.target.name])
+    }
+
+    function returnBackSet() {
+        setLislist(products)
+    }
+
+    if (reset && liListe !== products) {
+        returnBackSet()
+    }
+
+    for (const category in liListe) {
+
         // typeof, to set if under category exist
-        if (typeof products[category][0] !== "string") {
+        if (typeof liListe[category][0] !== "string") {
             const newCategory = <li key={i}>
-                <a href="index.html">
+                <button onClick={liListeset} name={category}>
                     {category}
                     <BsThreeDots size="2em" color='#ffd1b3' />
-                </a>
+                </button>
             </li>
 
             categorys[i] = newCategory
@@ -28,7 +46,19 @@ export function LiCategory() {
             categorys[i] = newCategory
         }
 
+
         i++
+    }
+
+    if (liListe !== products) {
+        const returnBack = <li key={i + 1}>
+            <button onClick={returnBackSet} className="return">
+                <IoIosArrowBack/>
+                RETOUR
+            </button>
+        </li>
+
+        categorys.unshift(returnBack)
     }
 
     return categorys

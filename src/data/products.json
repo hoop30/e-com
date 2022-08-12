@@ -1,19 +1,20 @@
 {
-        "Imformatique": {
-            "Ordinateur fixe": [],
-            "Portables": [],
-            "Périphériques": []
+        "Informatique": {
+            "Ordinateur fixe": ["objet"],
+            "Portables": ["objet"],
+            "Périphériques": ["objet"]
         },
         "Photo": {
-            "Appareil photo": [],
-            "Périphériques": []
+            "Appareil photo": ["objet"],
+            "Périphériques": ["objet"]
         },
         "Téléphonie": {
-            "Mobile": [],
-            "Fixe": []
+            "Mobile": ["objet"],
+            "Fixe": ["objet"]
         },
         "Vidéo": {
-            "Caméra sportive": [],
-            "Caméra connéctée": []
-        }
+            "Caméra sportive": ["objet"],
+            "Caméra connéctée": ["objet"]
+        },
+        "empty": ["produits1", "produit2"]
 }

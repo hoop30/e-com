@@ -1,11 +1,11 @@
 import React from 'react'
 import { LiCategory } from './LiCategory'
 
-export function ProductsMenu({ classStyle }) {
+export function ProductsMenu({ classStyle, reset }) {
 
     return (
         <ul className={classStyle}>
-            <LiCategory />
+            <LiCategory reset={reset}/>
         </ul>
     )
 }
