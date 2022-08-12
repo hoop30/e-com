@@ -1,81 +1,82 @@
 .headerMenu {
-
-    & li {
-        width: 300px;
-        height: 50px;
-
-        background: var(--light);
-        border-bottom: solid 1px var(--white75);
-
-        position: relative;
-        top: -40px;
-
-        & svg {
-            opacity: 60%;
-        }
-
-        & a {
-            padding: 0 10px 0 20px;
-            font-weight: 500;
-            color: var(--white);
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-        }
-
-        &:hover {
-            filter: brightness(115%);
-        }
-
-        @media screen and (min-width: 480px) {
-            top: -50px;
-        }
-    }
+    visibility: hidden;
 
     @media screen and (min-width: 1024px) {
-        display: flex;
-        height: 100%;
-        max-width: 620px;
-        width: 40vw;
+        visibility: visible;
         grid-area: menu;
+        max-width: 1210px;
+        width: 100%;
+        height: 100%;
+        display: flex;
 
         &>li {
-            top: 0;
+            position: relative;
             height: 100%;
             background: var(--dark);
             border-right: solid 1px var(--grey);
-            
-            &>a {
-                padding: 0 4%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &>a,
+            button {
+                padding: 0 1vw;
                 width: 100%;
+                height: 100%;
+                color: var(--white);
+                font-weight: 600;
+                font-size: 0.8em;
+                display: flex;
                 justify-content: center;
-                &>svg {
-                    display: none;
+                align-items: center;
+                gap: 10px;
+                border: none;
+                background: none;
+
+            }
+            &>a>svg {
+                display: none;
+
+                @media screen and (min-width: 1200px) {
+                    display: block;
                 }
             }
+
             &:hover {
                 filter: none;
                 background: var(--white);
 
-                & > a {
+                &>a {
                     color: var(--light);
+                }
+
+                &>button {
+                    color: var(--greydark);
+                }
+                
+                &>*>svg {
+                    color: var(--light) !important;
                 }
             }
         }
 
         &>li:first-child {
             background: var(--light);
-            
+
             &:hover {
                 background: var(--white);
 
-                & > a {
+                &>a {
                     color: rgb(61, 61, 61);
                 }
             }
         }
+    }
+}
+
+.HeaderMenuList {
+
+    &.hidden {
+        display: none;
     }
 }

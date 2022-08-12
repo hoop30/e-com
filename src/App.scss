@@ -5,7 +5,8 @@
 @use 'styles/header/menuRight';
 @use 'styles/header/menuBtn';
 @use 'styles/header/logoFuture';
-@use 'styles/header/productsMenu';
+@use 'styles/header/menuBtnList';
+@use 'styles/header/headerMenuList';
 
 *,
 body {
@@ -17,5 +18,8 @@ body {
     box-sizing: border-box;
     list-style: none;
     text-decoration: none !important;
-    //color: var(--white) !important;
+}
+
+body {
+    overflow-x: hidden;
 }

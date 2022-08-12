@@ -15,6 +15,5 @@
         "Vidéo": {
             "Caméra sportive": ["objet"],
             "Caméra connéctée": ["objet"]
-        },
-        "empty": ["produits1", "produit2"]
+        }
 }

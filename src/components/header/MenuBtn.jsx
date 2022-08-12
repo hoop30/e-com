@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ProductsMenu } from './ProductsMenu'
+import { MenuBtnList } from './MenuBtnList'
 
 export function MenuBtn() {
     
@@ -24,7 +24,7 @@ export function MenuBtn() {
                 </div>
                 <p>MENU</p>
             </button>
-            <ProductsMenu classStyle={ProductsMenuClass} reset={menuBtnClass}/>
+            <MenuBtnList classStyle={ProductsMenuClass} reset={menuBtnClass}/>
         </React.Fragment>
     )
 }

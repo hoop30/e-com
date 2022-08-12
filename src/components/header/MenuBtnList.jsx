@@ -3,13 +3,12 @@ import products from "../../data/products.json"
 import { BsThreeDots } from "react-icons/bs"
 import { useState } from 'react'
 import { IoIosArrowBack } from "react-icons/io";
+// import { LiCategory } from './LiCategory'
 
-
-export function LiCategory({ reset }) {
+export function MenuBtnList({ classStyle, reset }) {
     let categorys = []
     let i = 0
 
-    console.log(reset);
     const [liListe, setLislist] = useState(products)
 
     function liListeset(e) {
@@ -61,5 +60,9 @@ export function LiCategory({ reset }) {
         categorys.unshift(returnBack)
     }
 
-    return categorys
+    return (
+        <ul className={classStyle}>
+            {categorys}
+        </ul>
+    )
 }

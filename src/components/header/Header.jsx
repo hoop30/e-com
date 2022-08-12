@@ -3,11 +3,9 @@ import { MenuBtn } from "./MenuBtn";
 import { LogoFuture } from "./LogoFuture";
 import { SearchBar } from "./SearchBar";
 import { MenuRight } from "./MenuRight";
-// import { HeaderMenu } from "./HeaderMenu";
+import { HeaderMenu } from "./HeaderMenu";
 
 export function Header() {
-
-    
 
     return (
         <header>
@@ -34,7 +32,7 @@ export function Header() {
 
                 <div className="bottom">
                     <div className="headerMenu">
-                        {/* <HeaderMenu /> */}
+                        <HeaderMenu />
                     </div>
                 </div>
 
