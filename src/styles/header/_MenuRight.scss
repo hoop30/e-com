@@ -40,6 +40,11 @@
             & > p {
                 font-size: 0.7em;
             }
+            
+            &.menuRightSticky>p {
+                display: none;
+            }
         }
     }
 }
+

@@ -1,5 +1,6 @@
 .headerMenu {
     visibility: hidden;
+    width: 99%;
 
     @media screen and (min-width: 1024px) {
         visibility: visible;
