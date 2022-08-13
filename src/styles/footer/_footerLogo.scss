@@ -1,0 +1,40 @@
+.footerLogo {
+    position: relative;
+    padding: 35px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: solid 1px var(--white75);
+
+
+    &>img {
+        width: 50px;
+        height: auto;
+        padding-bottom: 25px;
+    }
+
+    &>ul {
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &>li {
+            padding: 0 8px;
+            font-size: 0.85em;
+            line-height: 150%;
+            color: var(--grey);
+        }
+    }
+}
+
+.footerLogoLeft {
+    position: absolute;
+    right: 0;
+
+    @media screen and (max-width: 990px) {
+        display: none;
+    }
+}

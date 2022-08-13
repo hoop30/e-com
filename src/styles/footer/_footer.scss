@@ -1,0 +1,18 @@
+footer {
+    background: var(--main);
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px 0px 10px;
+}
+
+.footerGrid {
+    max-width: 1210px;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "footerThanks"
+    "footerInfo"
+    "footerLogo";
+    
+}
