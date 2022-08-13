@@ -43,10 +43,11 @@ form {
             }
         }
 
+        
         @media screen and (min-width: 480px) {
             height: 100%;
         }
-
+        
         @media screen and (min-width: 1024px) {
             //width: 100%;
             height: 50%;
@@ -55,5 +56,12 @@ form {
 
     @media screen and (min-width: 1024px) {
         align-items: center;
+
+        &.searchSticky {
+
+            &>.searchForm, .searchBtn {
+                height: 80%;
+            }
+        }
     }
 }

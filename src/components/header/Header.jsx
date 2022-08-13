@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { MenuBtn } from "./MenuBtn";
 import { LogoFuture } from "./LogoFuture";
 import { SearchBar } from "./SearchBar";
 import { MenuRight } from "./MenuRight";
 import { HeaderMenu } from "./HeaderMenu";
+import { ScrollListener } from '../../utils/ScrollListener'
 
 export function Header() {
 
+    const [headerStyle, setHeaderStyle] = useState('')
+
+    ScrollListener(setHeaderStyle, '', 'headerSticky')
+
     return (
-        <header>
+        <header className={headerStyle}>
             <div className='nav-bar'>
 
                 <div className='top'>

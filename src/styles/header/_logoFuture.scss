@@ -1,4 +1,4 @@
-.logo-future {
+.logoFuture {
     padding: 5px;
     padding-left: 10px;
     height: 100%;
@@ -12,7 +12,13 @@
         height: 100%;
     }
 
+    
     @media screen and (min-width: 1024px) {
         border: none;
+        
+        &.logoSticky {
+            transition: none;
+            height: 50px;
+        }
     }
 }
