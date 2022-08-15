@@ -4,6 +4,7 @@ import logoInformatique from "../../assets/logo/Informatique.png"
 import logoPhoto from "../../assets/logo/Photo.png"
 import logoTéléphonie from "../../assets/logo/Téléphonie.png"
 import logoVidéo from "../../assets/logo/Vidéo.png"
+import { Link } from "react-router-dom";
 
 export function HeaderMenuCategoryList({liListe, liListeset}) {
     let categorys = []
@@ -19,13 +20,13 @@ export function HeaderMenuCategoryList({liListe, liListeset}) {
         i === 0 ? liclass = "active" : liclass = ""
 
         const newCategory = <li className={liclass} key={i}>
-            <a href="index.html" onMouseEnter={liListeset} name={category}>
+            <Link to="/ProductsList" onMouseEnter={liListeset} name={category}>
                 <div>
                     <img src={logos[category]} alt="" width="30px" height="30px" />
                     <p>{category}</p>
                 </div>
                 <IoIosArrowForward />
-            </a>
+            </Link>
         </li>
 
         categorys[i] = newCategory
