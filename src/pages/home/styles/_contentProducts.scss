@@ -1,0 +1,101 @@
+.ContentProducts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: solid 1px var(--greydark);
+
+    &>h2 {
+        color: var(--greydark);
+        padding-bottom: 35px;
+    }
+}
+
+.productSlide {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-areas:
+    "arrowLeft content arrowRight";
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &>.arrowLeft {
+        grid-area: arrowLeft;
+    }
+
+    &>.arrowRight {
+        grid-area: arrowRight;
+    }
+
+    &>.arrowLeft, .arrowRight {
+
+        &>.arrow {
+            color: var(--greydark);
+            filter: brightness(200%);
+        }
+        &:hover>.arrow {
+            filter: none;
+        }
+    }
+    
+
+    &>.productBox {
+        width: 100%;
+        grid-area: content;
+
+        &>.productBoxphoto {
+            width: 200px;
+            height: 215px;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 15px;
+        
+            &>img {
+                height: 100%;
+                width: auto;
+            }
+        }
+
+        &>.productName {
+            color: var(--greydark);
+            font-size: 0.9em;
+            width: 80%;
+
+            &:hover {
+                text-decoration: underline !important;
+            }
+        }
+
+        &>.price {
+            padding-top: 25px;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &>.productPrice {
+                font-weight: 600;
+                color: var(--dark);
+            }
+
+            &>button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                border-radius: 50%;
+                background: darkorange;
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+    }
+}
+

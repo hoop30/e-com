@@ -11,6 +11,8 @@
 @use 'styles/footer/footerThanks';
 @use 'styles/footer/footerInfo';
 @use 'styles/footer/footerLogo';
+@use './pages//home/home';
+
 
 
 *,
@@ -27,4 +29,9 @@ body {
 
 body {
     overflow-x: hidden;
+}
+
+sup {
+    position: relative;
+    top:3px
 }
