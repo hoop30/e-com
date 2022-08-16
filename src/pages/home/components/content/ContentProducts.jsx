@@ -10,8 +10,6 @@ export function ContentProducts() {
 
     const photo = ProductPhoto()
     const newPhoto = photo['Usb superKey'][0]
-    const prix = "100.90"
-    const newPrice = FormatPrice(prix)
     const name = "Mon super ordi"
 
     return (
@@ -27,7 +25,7 @@ export function ContentProducts() {
                     </a>
                     <a href='index.html' className='productName'>{name}</a>
                     <div className='price'>
-                        <p className='productPrice'>{newPrice}</p>
+                        <FormatPrice className='productPrice' price="100.90"/>
                         <button>
                             <MdOutlineAddShoppingCart size="2em"/>
                         </button>

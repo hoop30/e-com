@@ -1,13 +1,6 @@
 
-export function FormatPrice(price) {
-
+export function FormatPrice({price, className = ""}) {
     const splitPrice = price.split('.')
     
-    const newPrice = [
-        splitPrice[0] ,
-        "€",
-        <sup>{splitPrice[1]}</sup>
-    ]
-
-    return newPrice
+    return <p className={className}>{splitPrice[0]}€<sup>{splitPrice[1]}</sup></p>
 }
