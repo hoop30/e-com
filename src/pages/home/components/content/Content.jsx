@@ -5,6 +5,7 @@ import { ContentPromo } from './ContentPromo'
 import { ContentService } from './ContentService'
 
 export function Content() {
+
     return (
         <div className='content'>
             <ContentProducts/>
