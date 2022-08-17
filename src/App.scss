@@ -5,7 +5,6 @@
 @use 'styles/header/menuRight';
 @use 'styles/header/menuBtn';
 @use 'styles/header/logoFuture';
-@use 'styles/header/menuBtnList';
 @use 'styles/header/headerMenuList';
 @use 'styles/footer/footer';
 @use 'styles/footer/footerThanks';
@@ -13,6 +12,7 @@
 @use 'styles/footer/footerLogo';
 @use './pages//home/home';
 @use './styles/header/menuCategoryList';
+@use './styles/header/category';
 
 
 

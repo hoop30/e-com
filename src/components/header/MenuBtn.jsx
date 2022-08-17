@@ -26,7 +26,7 @@ export function MenuBtn() {
                 <p>MENU</p>
             </button>
             {/* <MenuBtnList classStyle={ProductsMenuClass} reset={menuBtnClass}/> */}
-            <MenuCategoryList/>
+            <MenuCategoryList classStyle={ProductsMenuClass}/>
         </React.Fragment>
     )
 }
