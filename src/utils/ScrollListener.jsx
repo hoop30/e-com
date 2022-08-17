@@ -1,12 +1,12 @@
 
 
-export function ScrollListener(set, sateorigin, statechange) {
+export function ScrollListener(onset, sateorigin, statechange) {
     
     window.addEventListener('scroll',() => {
         if (window.scrollY > 70) {
-            set(statechange)
+            onset(statechange)
         } else if (window.scrollY < 40) {
-            set(sateorigin)
+            onset(sateorigin)
         }
         
     })

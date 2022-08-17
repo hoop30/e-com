@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { MenuBtn } from "./MenuBtn";
-import { LogoFuture } from "./LogoFuture";
-import { SearchBar } from "./SearchBar";
-import { MenuRight } from "./MenuRight";
-import { HeaderMenu } from "./HeaderMenu";
+import { MenuBtn } from "./mobile/MenuBtn";
+import { LogoFuture } from "./topBar/LogoFuture";
+import { SearchBar } from "./topBar/SearchBar";
+import { MenuRight } from "./topBar/MenuRight";
+import { HeaderMenu } from "./bottomBar/HeaderMenu";
 import { ScrollListener } from '../../utils/ScrollListener'
+import { StickyBtn } from './topBar/StickyBtn';
 
 export function Header() {
 
@@ -22,6 +23,7 @@ export function Header() {
                         <div className='left'>
                             <MenuBtn />
                             <LogoFuture />
+                            <StickyBtn />
                         </div>
 
                         <div className='searchbar'>

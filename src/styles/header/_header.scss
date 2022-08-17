@@ -4,6 +4,7 @@ header {
     @media screen and (min-width: 480px) {
         position: sticky;
         top: 0;
+        z-index: 2;
     }
 
     @media screen and (min-width: 1024px) {

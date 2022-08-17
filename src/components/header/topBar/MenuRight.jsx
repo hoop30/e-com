@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FiUser } from "react-icons/fi"
 import { RiShoppingCartLine } from "react-icons/ri"
-import { ScrollListener } from '../../utils/ScrollListener'
+import { ScrollListener } from '../../../utils/ScrollListener'
 import { Link } from "react-router-dom";
 
 

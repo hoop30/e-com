@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import logo from '../../assets/img/logo.png'
-import { ScrollListener } from '../../utils/ScrollListener'
+import logo from '../../../assets/img/logo.png'
+import { ScrollListener } from '../../../utils/ScrollListener'
 import { Link } from "react-router-dom";
 
 
