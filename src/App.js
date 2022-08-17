@@ -8,11 +8,15 @@ import { ProductsList } from './pages/productsList/ProductsList'
 import { ProductsSubList } from './pages/productsSubList/ProductsSubList'
 import { Product } from './pages/product/Product'
 import { Cart } from './pages/cart/Cart'
+import MenuHiddenContextProvider from './context/MenuHiddenContext'
+
 
 function App() {
     return (
         <React.Fragment>
-            <Header />
+            <MenuHiddenContextProvider>
+                <Header />
+            </MenuHiddenContextProvider>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="ProductsList" element={<ProductsList />} />

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { ScrollListener } from '../../../utils/ScrollListener'
 import { HeaderMenuList } from '../bottomBar/HeaderMenuList'
+import { useContext } from 'react'
+import { MenuHiddenContext } from '../../../context/MenuHiddenContext'
 
 export function StickyBtn() {
     
@@ -17,9 +19,11 @@ export function StickyBtn() {
         setStickyBtnClass(!stickyBtnClass)
     }
 
+    const { toggle } = useContext(MenuHiddenContext)
+
     return (
         <React.Fragment>
-            <button className={stickyBtnhidden} type="button" aria-label="Toggle navigation" onClick={userClick}>
+            <button className={stickyBtnhidden} type="button" aria-label="Toggle navigation" onClick={toggle}>
                 <div className={stickyBtn}>
                     <span className="line l1"></span>
                     <span className="line l2"></span>

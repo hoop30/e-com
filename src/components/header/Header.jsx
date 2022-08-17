@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { MenuBtn } from "./mobile/MenuBtn";
 import { LogoFuture } from "./topBar/LogoFuture";
 import { SearchBar } from "./topBar/SearchBar";
@@ -6,9 +6,12 @@ import { MenuRight } from "./topBar/MenuRight";
 import { HeaderMenu } from "./bottomBar/HeaderMenu";
 import { ScrollListener } from '../../utils/ScrollListener'
 import { StickyBtn } from './topBar/StickyBtn';
+import { HeaderMenuList } from '../header/bottomBar/HeaderMenuList'
+import { MenuHiddenContext } from '../../context/MenuHiddenContext'
+
 
 export function Header() {
-
+    const { MenuHidden, setMenu, unSetMenu } = useContext(MenuHiddenContext)
     const [headerStyle, setHeaderStyle] = useState('')
 
     ScrollListener(setHeaderStyle, '', 'headerSticky')
@@ -42,7 +45,9 @@ export function Header() {
                         <HeaderMenu />
                     </div>
                 </div>
-
+                <div className={MenuHidden.menuclass} onMouseEnter={setMenu} onMouseLeave={unSetMenu}>
+                    <HeaderMenuList />
+                </div>
             </div>
         </header>
     )

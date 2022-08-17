@@ -2,31 +2,21 @@ import React from 'react'
 import { useState } from 'react';
 import { RiArrowDropDownLine, RiPercentLine, RiContactsLine, RiQuestionMark } from "react-icons/ri";
 import { HeaderMenuList } from './HeaderMenuList'
+import { useContext } from 'react'
+import { MenuHiddenContext } from '../../../context/MenuHiddenContext'
 
 
 export function HeaderMenu() {
 
-    const [showProducts, setshowProducts] = useState(false)
-    let HeaderMenuListClass = "HeaderMenuList hidden"
-    showProducts ? HeaderMenuListClass = "HeaderMenuList" : HeaderMenuListClass = "HeaderMenuList hidden"
-
-    function showProductstrue() {
-        setshowProducts(true)
-    }
-    function showProductsfalse() {
-        setshowProducts(false)
-    }
+    const {setMenu, unSetMenu} = useContext(MenuHiddenContext)
 
     return (
         <ul className='headerMenu'>
-            <li onMouseEnter={showProductstrue} onMouseLeave={showProductsfalse}>
+            <li onMouseEnter={setMenu} onMouseLeave={unSetMenu}>
                 <button aria-current="page" href="index.css">
                     TOUS NOS PRODUITS
                     <RiArrowDropDownLine size="2em" color='#fcfcfc' />
                 </button>
-                <div className={HeaderMenuListClass}>
-                    <HeaderMenuList showProducts={showProducts}/>
-                </div>
             </li>
             <li>
                 <a href="index.css">
