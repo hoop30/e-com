@@ -1,50 +1,58 @@
-.CategoryList {
-    position: absolute;
+.cat {
     z-index: 2;
-    top: 110px;
-    left: -2px;
-    background: var(--white);
-    border-bottom: solid 2px var(--dark);
-    border-left: solid 2px var(--dark);
-    width: 202px;
 
-    &>li {
-        height: 50px;
-        border-right: solid 1px var(--grey);
-        border-bottom: solid 1px var(--grey);
-        
-        &>a {
-            padding: 0 10px;
-            line-height: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            font-size: 0.9em;
+    &>.CategoryList {
+        background: var(--white);
+        border-bottom: solid 2px var(--dark);
+        border-left: solid 2px var(--dark);
+    
+        &>li {
+            height: 50px;
+            border-right: solid 1px var(--grey);
+            border-bottom: solid 1px var(--grey);
             
-            &>div {
+            &>a {
+                padding: 0 10px;
+                line-height: 100%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-
-                &>img {
-                    margin: 0 10px 0 0;
+                width: 100%;
+                height: 100%;
+                font-size: 0.9em;
+                color: var(--greydark);
+                
+                &>div {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+    
+                    &>img {
+                        margin: 0 10px 0 0;
+                    }
                 }
             }
-        }
+    
+            &:last-child {
+                border-bottom: none;
+            }
 
-        &:last-child {
-            border-bottom: none;
+            &:hover {
+                background: var(--pale);
+                border-right: none;
+                
+                &>a {
+                    color: var(--main);
+                }
+            }
         }
     }
 }
 
 .SubCategoryList {
-    position: absolute;
+    position: relative;
+    left: -2px;
     z-index: 1;
-    top: 40px;
-    left: calc(100% - 1px);
     background: var(--pale);
     border: solid 2px var(--dark);
     border-top: none;

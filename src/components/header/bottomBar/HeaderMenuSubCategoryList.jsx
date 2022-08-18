@@ -1,14 +1,17 @@
-import React from 'react'
-import { Link } from "react-router-dom";
+import React, { useContext } from 'react'
+import { Link } from "react-router-dom"
+import { MenuHiddenContext } from '../../../context/MenuHiddenContext'
 
 
-export function HeaderMenuSubCategoryList({ categorys, subList, showProducts, show, onresetSubList }) {
+
+export function HeaderMenuSubCategoryList({ categorys, subList, onresetSubList }) {
     
+    const {MenuHidden} = useContext(MenuHiddenContext)
     let subCategoryLi = []
 
     // re-open menu reset position
-    if (subList !== null) {
-        if (subList !== categorys[categorys.length - 1].children && (!showProducts || show === false)) {
+    if (subList !== null && MenuHidden !== 'menu') {
+        if (subList !== categorys[categorys.length - 1].children) {
             onresetSubList()
         }
     }

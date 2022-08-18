@@ -4,22 +4,20 @@ export const MenuHiddenContext = createContext()
 
 const MenuHiddenContextProvider = (props) => {
 
-    const Menu = {
-        menuclass: 'hidden',
-        toggle: true
-    }
-
-    const [MenuHidden, setMenuHidden] = useState(Menu)
-
+    const [MenuHidden, setMenuHidden] = useState('menu hidden')
+    
     function setMenu() {
-        setMenuHidden(Menu.menuclass = "")
+        setMenuHidden('menu')
     }
+
     function unSetMenu() {
-        setMenuHidden(Menu.menuclass = "hidden")
+        setMenuHidden('menu hidden')
     }
+
     function toggle() {
-        setMenuHidden(!Menu.toggle)
+        MenuHidden === 'menu' ? unSetMenu() : setMenu()
     }
+
     return (
         <MenuHiddenContext.Provider value={{MenuHidden, setMenu, unSetMenu, toggle}}>
             {props.children}

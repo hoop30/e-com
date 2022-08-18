@@ -6,12 +6,12 @@ import { MenuRight } from "./topBar/MenuRight";
 import { HeaderMenu } from "./bottomBar/HeaderMenu";
 import { ScrollListener } from '../../utils/ScrollListener'
 import { StickyBtn } from './topBar/StickyBtn';
-import { HeaderMenuList } from '../header/bottomBar/HeaderMenuList'
+import { FetchMenuList } from './bottomBar/FetchMenuList'
 import { MenuHiddenContext } from '../../context/MenuHiddenContext'
 
 
 export function Header() {
-    const { MenuHidden, setMenu, unSetMenu } = useContext(MenuHiddenContext)
+    const { MenuHidden } = useContext(MenuHiddenContext)
     const [headerStyle, setHeaderStyle] = useState('')
 
     ScrollListener(setHeaderStyle, '', 'headerSticky')
@@ -45,9 +45,13 @@ export function Header() {
                         <HeaderMenu />
                     </div>
                 </div>
-                <div className={MenuHidden.menuclass} onMouseEnter={setMenu} onMouseLeave={unSetMenu}>
-                    <HeaderMenuList />
+
+                <div className={MenuHidden}>
+                    <div>
+                        <FetchMenuList />
+                    </div>
                 </div>
+                
             </div>
         </header>
     )

@@ -1,7 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
 import { RiArrowDropDownLine, RiPercentLine, RiContactsLine, RiQuestionMark } from "react-icons/ri";
-import { HeaderMenuList } from './HeaderMenuList'
 import { useContext } from 'react'
 import { MenuHiddenContext } from '../../../context/MenuHiddenContext'
 

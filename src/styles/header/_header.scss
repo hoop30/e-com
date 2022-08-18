@@ -55,11 +55,11 @@ header {
 
     @media screen and (min-width: 1024px) {
         height: 120px;
-        grid-template-rows: 80px 40px;
-        grid-template-columns: auto auto auto;
+        grid-template-rows: 80px 40px auto;
         grid-template-areas:
             "top-nav"
-            "bottom-nav";
+            "bottom-nav"
+            "menu";
         justify-content: center;
     }
 }
@@ -141,5 +141,18 @@ header {
 
     @media screen and (min-width: 1024px) {
         justify-content: center;
+    }
+}
+
+.menu {
+    max-width: 1210px;
+    width: 100vw;
+    justify-self: center;
+    position: relative;
+    left: -2px;
+    
+    &>div {
+        display: grid;
+        grid-template-columns: 213px auto;
     }
 }
