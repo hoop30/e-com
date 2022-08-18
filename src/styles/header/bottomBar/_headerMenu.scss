@@ -1,3 +1,5 @@
+@import '../../mixin';
+
 .headerMenu {
     visibility: hidden;
     width: 99%;
@@ -8,16 +10,14 @@
         max-width: 1210px;
         width: 100%;
         height: 100%;
-        display: flex;
+        @include flex-center(none, none);
 
         &>li {
             position: relative;
             height: 100%;
             background: var(--dark);
             border-right: solid 1px var(--grey);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex-center(center, center);
 
             &:first-child {
                     width: 210px;
@@ -31,9 +31,7 @@
                 color: var(--white);
                 font-weight: 600;
                 font-size: 0.8em;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include flex-center(center, center);
                 gap: 10px;
                 border: none;
                 background: none;

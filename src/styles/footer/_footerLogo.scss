@@ -1,12 +1,11 @@
+@import '../mixin';
+
 .footerLogo {
-    position: relative;
-    padding: 35px 0;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    padding: 35px 0;
     border-bottom: solid 1px var(--white75);
+    position: relative;
+    @include flex-center(center, center, column);
 
 
     &>img {
@@ -16,10 +15,8 @@
     }
 
     &>ul {
-        
-        display: flex;
+        @include flex-center(center, none);
         flex-wrap: wrap;
-        justify-content: center;
 
         &>li {
             padding: 0 8px;

@@ -1,7 +1,12 @@
+@use './footerThanks';
+@use './footerInfo';
+@use './footerLogo';
+@import '../mixin';
+
+
 footer {
     background: var(--main);
-    display: flex;
-    justify-content: center;
+    @include flex-center(center, none);
     padding: 20px 10px 0px 10px;
 }
 

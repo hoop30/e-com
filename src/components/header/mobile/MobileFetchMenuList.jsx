@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import Commerce from '@chec/commerce.js'
-import { Category } from './Category'
+import { MobileMenuList } from './MobileMenuList'
 
 
 const commerce = new Commerce('pk_test_46054d518a6be8f690e1432a52a28b5586392960bbb91');
 
 
-export class MenuCategoryList extends Component {
+export class MobileFetchMenuList extends Component {
 
     constructor(props) {
         super(props)
@@ -36,7 +36,7 @@ export class MenuCategoryList extends Component {
 
         return (
 
-            <Category category={category} classStyle={classStyle}/>
+            <MobileMenuList category={category} classStyle={classStyle}/>
 
         )
     }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { MenuCategoryList } from './MenuCategoryList'
+import { MobileFetchMenuList } from './MobileFetchMenuList'
 
-export function MenuBtn() {
+export function MobileMenuBtn() {
     
     const [menuBtnClass, setMenuBtnClass] = useState(true)
     let btnClass = "menuBtn"
@@ -24,7 +24,7 @@ export function MenuBtn() {
                 </div>
                 <p>MENU</p>
             </button>
-            <MenuCategoryList classStyle={ProductsMenuClass}/>
+            <MobileFetchMenuList classStyle={ProductsMenuClass}/>
         </React.Fragment>
     )
 }

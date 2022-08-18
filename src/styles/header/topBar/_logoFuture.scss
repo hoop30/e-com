@@ -1,11 +1,13 @@
+@import '../../mixin';
+
 .logoFuture {
     padding: 5px;
     padding-left: 10px;
     height: 100%;
     width: 80px;
     border-left: solid 1px var(--white75);
-    display: flex;
-    justify-content: center;
+    @include flex-center(center, none);
+
 
     & img {
         width: auto;

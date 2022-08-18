@@ -1,3 +1,14 @@
+@use './topBar/logoFuture';
+@use './topBar/stickyBtn';
+@use './topBar/searchBar';
+@use './topBar/menuRight';
+@use './bottomBar/headerMenu';
+@use './menu/headerMenuList';
+@use './mobile/menuBtn';
+@use './mobile/category';
+
+@import '../mixin';
+
 header {
     width: 100%;
 
@@ -22,9 +33,9 @@ header {
             }
 
             &>.nav-bar {
-                display: grid;
                 width: 100%;
                 height: 50px;
+                display: grid;
                 grid-template-rows: 100% 0%;
                 grid-template-areas:
                     "top-nav"
@@ -67,20 +78,15 @@ header {
 .top {
     width: 100vw;
     background: var(--main);
-    display: flex;
-    justify-content: center;
-
-    @media screen and (min-width: 1024px) {
-        justify-content: center;
-    }
+    @include flex-center(center, none);
 }
 
 .top-nav {
-    padding-right: 15px;
-    display: grid;
     max-width: 1210px;
     width: 100%;
+    padding-right: 15px;
     grid-area: top-nav;
+    display: grid;
     grid-template-rows: 55% 45%;
     grid-template-columns: 50% 50%;
     grid-template-areas:
@@ -90,16 +96,14 @@ header {
     
     &>.left {
         grid-area: left;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        @include flex-center(flex-start, center);
+
     }
 
     &>.right {
         grid-area: right;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
+        @include flex-center(flex-end, center);
+
     }
 
     &>.searchbar {
@@ -132,12 +136,12 @@ header {
 }
 
 .bottom {
-    padding: 0 7.5px;
-    grid-area: bottom-nav;
     width: 100vw;
     height: 100%;
+    padding: 0 7.5px;
+    grid-area: bottom-nav;
     background: var(--dark);
-    display: flex;
+    @include flex-center(none, none);
 
     @media screen and (min-width: 1024px) {
         justify-content: center;

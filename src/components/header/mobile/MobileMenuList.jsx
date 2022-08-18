@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { BsThreeDots } from 'react-icons/bs'
 import { IoIosArrowBack } from 'react-icons/io'
 
-export function Category({ category, classStyle }) {
+export function MobileMenuList({ category, classStyle }) {
 
     let ul = []
     const [liListe, setLislist] = useState()

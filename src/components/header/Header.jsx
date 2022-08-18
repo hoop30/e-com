@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react'
-import { MenuBtn } from "./mobile/MenuBtn";
+import { MobileMenuBtn } from "./mobile/MobileMenuBtn";
 import { LogoFuture } from "./topBar/LogoFuture";
 import { SearchBar } from "./topBar/SearchBar";
 import { MenuRight } from "./topBar/MenuRight";
 import { HeaderMenu } from "./bottomBar/HeaderMenu";
 import { ScrollListener } from '../../utils/ScrollListener'
 import { StickyBtn } from './topBar/StickyBtn';
-import { FetchMenuList } from './bottomBar/FetchMenuList'
+import { FetchMenuList } from './menu/FetchMenuList'
 import { MenuHiddenContext } from '../../context/MenuHiddenContext'
 
 
@@ -24,7 +24,7 @@ export function Header() {
                     <div className='top-nav'>
 
                         <div className='left'>
-                            <MenuBtn />
+                            <MobileMenuBtn />
                             <LogoFuture />
                             <StickyBtn />
                         </div>

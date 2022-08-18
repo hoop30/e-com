@@ -1,5 +1,7 @@
+@import '../../mixin';
+
 .menuRight {
-    display: flex;
+    @include flex-center(none,none);
     height: 100%;
 
     & > .menuRightLogo {
@@ -7,8 +9,7 @@
         border-left: solid 1px var(--white75);
         cursor: pointer;
         height: 100%;
-        display: flex;
-        flex-direction: column;
+        @include flex-center(none, none, column);
 
         & > p {
             font-size: 0.5em;

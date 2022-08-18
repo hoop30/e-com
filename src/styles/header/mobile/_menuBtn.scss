@@ -1,23 +1,19 @@
+@import '../../mixin';
+
 .bouton {
     height: 100%;
     width: 45px;
     border: none;
     background: none;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-center(center, center, column);
     transition: 0.3s ease-out;
 
     &>.menuBtn {
         margin: 8px 8px;
         height: 30px;
         width: 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
+        @include flex-center(space-around, center, column);
     }
 
     &>p {

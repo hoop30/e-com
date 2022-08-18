@@ -1,19 +1,7 @@
 @use 'styles/variables';
 @use 'styles/header/header';
-@use 'styles/header/headerMenu';
-@use 'styles/header/searchBar';
-@use 'styles/header/menuRight';
-@use 'styles/header/menuBtn';
-@use 'styles/header/logoFuture';
-@use 'styles/header/headerMenuList';
 @use 'styles/footer/footer';
-@use 'styles/footer/footerThanks';
-@use 'styles/footer/footerInfo';
-@use 'styles/footer/footerLogo';
-@use './pages//home/home';
-@use './styles/header/category';
-@use './styles/header/stickyBtn';
-
+@use './pages/home/home';
 
 
 *,

@@ -1,3 +1,5 @@
+@import '../mixin';
+
 .footerInfo {
     border-bottom: solid 1px var(--white75);
 
@@ -11,18 +13,15 @@
 }
 
 .footerTopGrid {
-    color: var(--white);
+    max-width: 1210px;
     padding: 30px 20px 65px 20px;
     grid-area: footerTopGrid;
-    max-width: 1210px;
+    color: var(--white);
 
     &>ul {
         padding-bottom: 40px;
-        display: flex;
-
-        align-items: center;
-        flex-direction: column;
         gap: 2px;
+        @include flex-center(none, center, column);
 
         &>li {
 
@@ -52,11 +51,11 @@
             align-items: flex-start;
 
             &>li>span {
-                display: block;
                 width: 50px;
                 height: 2px;
-                background-color: var(--white);
                 margin: 10px 0;
+                display: block;
+                background-color: var(--white);
             }
         }
     }
@@ -88,9 +87,8 @@
     }
 
     @media screen and (min-width: 990px) {
-        display: flex;
-        justify-content: space-around;
         padding: 30px 5px 5px 5px;
+        @include flex-center(space-around, none);
 
         &>ul,
         div {
@@ -102,7 +100,6 @@
 
     @media screen and (min-width: 1024px) {
         padding-bottom: 45px;
-
     }
 }
 
@@ -116,10 +113,8 @@
         gap: 7px;
 
         &>li {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding-bottom: 10px;
+            @include flex-center(center, center);
 
             &:first-child {
                 padding: 0;
@@ -139,15 +134,13 @@
             }
 
             &>a {
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 width: 100px;
                 height: 40px;
                 background: var(--light);
                 color: var(--white);
                 font-weight: 600;
                 font-size: 0.9em;
+                @include flex-center(center, center);
             }
 
             &>p {
@@ -186,16 +179,14 @@
         @media screen and (min-width: 1024px) {
 
             &>.liTitle {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
+                @include flex-center(none, flex-start, column);
 
                 &>span {
-                    display: block;
                     width: 50px;
                     height: 2px;
-                    background-color: var(--white);
                     margin: 10px 0;
+                    display: block;
+                    background-color: var(--white);
                 }
             }
 
@@ -208,23 +199,20 @@
 }
 
 .footerBottomGrid {
-    display: none;
     max-width: 1210px;
+    display: none;
     
     &>div {
         width: 21vw;
     }
 
     @media screen and (min-width: 990px) {
-        display: flex;
-        justify-content: space-around;
+        @include flex-center(space-around, none);
         padding-bottom: 35px;
 
         &>div {
             width: 21vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include flex-center(none, center, column);
 
             &>svg {
                 color: var(--grey);
