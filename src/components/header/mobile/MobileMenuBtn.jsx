@@ -14,6 +14,14 @@ export function MobileMenuBtn() {
         setMenuBtnClass(!menuBtnClass)
     }
 
+    // close mobile menu on desktop resize
+    window.onresize = closeMenu
+    function closeMenu() {
+        if (window.innerWidth > 1024 && !menuBtnClass) {
+            setMenuBtnClass(true)
+        }
+    }
+    
     return (
         <React.Fragment>
             <button className="MobileMenuBtn" type="button" aria-label="Toggle navigation" onClick={userClick}>
