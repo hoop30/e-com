@@ -6,6 +6,7 @@ export function MobileMenuBtn() {
     const [menuBtnClass, setMenuBtnClass] = useState(true)
     let btnClass = "menuBtn"
     let ProductsMenuClass = "productsMenu hidden"
+    
     menuBtnClass ? btnClass = "menuBtn" : btnClass = "menuBtn active"
     menuBtnClass ? ProductsMenuClass = "productsMenu hidden" : ProductsMenuClass = "productsMenu"
 
@@ -15,7 +16,7 @@ export function MobileMenuBtn() {
 
     return (
         <React.Fragment>
-            <button className="bouton" type="button" aria-label="Toggle navigation" onClick={userClick}>
+            <button className="MobileMenuBtn" type="button" aria-label="Toggle navigation" onClick={userClick}>
                 <div className={btnClass}>
                     <span className="line l1"></span>
                     <span className="line l2"></span>

@@ -12,6 +12,18 @@
         height: 100%;
         @include flex-center(none, none);
 
+        &>li:first-child {
+            background: var(--light);
+
+            &:hover {
+                background: var(--white);
+
+                &>a {
+                    color: rgb(61, 61, 61);
+                }
+            }
+        }
+
         &>li {
             position: relative;
             height: 100%;
@@ -62,24 +74,5 @@
                 }
             }
         }
-
-        &>li:first-child {
-            background: var(--light);
-
-            &:hover {
-                background: var(--white);
-
-                &>a {
-                    color: rgb(61, 61, 61);
-                }
-            }
-        }
-    }
-}
-
-.HeaderMenuList {
-
-    &.hidden {
-        display: none;
     }
 }

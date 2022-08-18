@@ -4,7 +4,7 @@ import { MenuHiddenContext } from '../../../context/MenuHiddenContext'
 
 
 
-export function HeaderMenuSubCategoryList({ categorys, subList, onresetSubList }) {
+export function SubCategoryList({ categorys, subList, onresetSubList }) {
     
     const {MenuHidden} = useContext(MenuHiddenContext)
     let subCategoryLi = []
@@ -25,7 +25,6 @@ export function HeaderMenuSubCategoryList({ categorys, subList, onresetSubList }
 
         subCategoryLi.push(newSubCategory)
     }
-
 
     return subCategoryLi
 }

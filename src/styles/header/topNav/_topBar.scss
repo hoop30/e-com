@@ -1,0 +1,55 @@
+@import '../../mixin';
+
+.top {
+    max-width: 1210px;
+    width: 100%;
+    padding-right: 15px;
+    grid-area: top-nav;
+    display: grid;
+    grid-template-rows: 55% 45%;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+        "left right"
+        "searchbar searchbar";
+    background: var(--main);
+
+    &>.left {
+        grid-area: left;
+        @include flex-center(flex-start, center);
+
+    }
+
+    &>.right {
+        grid-area: right;
+        @include flex-center(flex-end, center);
+
+    }
+
+    &>.searchbar {
+        grid-area: searchbar;
+        width: 100%;
+        height: 100%;
+        padding: 0 5px 5px 5px;
+
+        @media screen and (min-width: 480px) {
+            padding: 0 8px 8px 8px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding: 0;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        padding-right: 0px;
+        padding: 0 7.5px;
+        grid-template-rows: 100%;
+        grid-template-columns: 120px auto 165px;
+        grid-template-areas:
+            "left searchbar right";
+
+        &>.left {
+            justify-content: center;
+        }
+    }
+}

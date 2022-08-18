@@ -1,57 +1,19 @@
-@use './topBar/logoFuture';
-@use './topBar/stickyBtn';
-@use './topBar/searchBar';
-@use './topBar/menuRight';
-@use './bottomBar/headerMenu';
-@use './menu/headerMenuList';
-@use './mobile/menuBtn';
-@use './mobile/category';
+@use './topNav/topBar';
+@use './topNav/logoFuture';
+@use './topNav/stickyBtn';
+@use './topNav/searchBar';
+@use './topNav/menuRight';
+@use './bottomNav/headerMenu';
+@use './menu/desktopMenuList';
+@use './menu/categoryList';
+@use './menu/subCategoryList';
+@use './mobile/mobileMenuBtn';
+@use './mobile/mobileMenuList';
 
 @import '../mixin';
 
-header {
-    width: 100%;
-
-    @media screen and (min-width: 480px) {
-        position: sticky;
-        top: 0;
-        z-index: 2;
-    }
-
-    @media screen and (min-width: 1024px) {
-        position: unset;
-        box-shadow: 0px -5px 4px 5px rgba(0, 0, 0, 0.75);
-        -webkit-box-shadow: 0px -5px 4px 5px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 0px -5px 4px 5px rgba(0, 0, 0, 0.75);
-
-        &.headerSticky {
-            position: sticky;
-            top: 0;
-
-            &>* {
-                transition: none;
-            }
-
-            &>.nav-bar {
-                width: 100%;
-                height: 50px;
-                display: grid;
-                grid-template-rows: 100% 0%;
-                grid-template-areas:
-                    "top-nav"
-                    "bottom-nav";
-                
-
-                &>.bottom {
-                    display: none;
-                }
-            }
-        }
-    }
-
-}
-
 .nav-bar {
+    width: 100%;
     display: grid;
     height: 90px;
     grid-template-rows: 100% 0%;
@@ -60,8 +22,39 @@ header {
         "bottom-nav";
     transition: 0.3s ease-out;
 
+    &>.top-nav {
+        width: 100vw;
+        background: var(--main);
+        @include flex-center(center, none);
+    }
+
+    &>.bottom-nav {
+        width: 100vw;
+        height: 100%;
+        padding: 0 7.5px;
+        grid-area: bottom-nav;
+        background: var(--dark);
+        @include flex-center(none, none);
+    
+        @media screen and (min-width: 1024px) {
+            justify-content: center;
+        }
+    }
+    
+    &>.menu {
+        max-width: 1210px;
+        width: 100vw;
+        justify-self: center;
+        position: relative;
+        left: -2px;
+    
+        
+    }
     @media screen and (min-width: 480px) {
         height: 110px;
+        position: sticky;
+        top: 0;
+        z-index: 2;
     }
 
     @media screen and (min-width: 1024px) {
@@ -72,91 +65,27 @@ header {
             "bottom-nav"
             "menu";
         justify-content: center;
-    }
-}
 
-.top {
-    width: 100vw;
-    background: var(--main);
-    @include flex-center(center, none);
-}
+        position: unset;
+        box-shadow: 0px -5px 4px 5px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 0px -5px 4px 5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px -5px 4px 5px rgba(0, 0, 0, 0.75);
 
-.top-nav {
-    max-width: 1210px;
-    width: 100%;
-    padding-right: 15px;
-    grid-area: top-nav;
-    display: grid;
-    grid-template-rows: 55% 45%;
-    grid-template-columns: 50% 50%;
-    grid-template-areas:
-        "left right"
-        "searchbar searchbar";
-    background: var(--main);
-    
-    &>.left {
-        grid-area: left;
-        @include flex-center(flex-start, center);
+        &.headerSticky {
+            position: sticky;
+            top: 0;
 
-    }
+            width: 100%;
+            height: 50px;
+            display: grid;
+            grid-template-rows: 100% 0%;
+            grid-template-areas:
+                "top-nav"
+                "bottom-nav";
 
-    &>.right {
-        grid-area: right;
-        @include flex-center(flex-end, center);
-
-    }
-
-    &>.searchbar {
-        grid-area: searchbar;
-        width: 100%;
-        height: 100%;
-        padding: 0 5px 5px 5px;
-
-        @media screen and (min-width: 480px) {
-            padding: 0 8px 8px 8px;
+            &>.bottom-nav {
+                display: none;
+            }
         }
-
-        @media screen and (min-width: 1024px) {
-            padding: 0;
-        }
-    }
-
-    @media screen and (min-width: 1024px) {
-        padding-right: 0px;
-        padding: 0 7.5px;
-        grid-template-rows: 100%;
-        grid-template-columns: 120px auto 165px;
-        grid-template-areas:
-            "left searchbar right";
-
-        &>.left {
-            justify-content: center;
-        }
-    }
-}
-
-.bottom {
-    width: 100vw;
-    height: 100%;
-    padding: 0 7.5px;
-    grid-area: bottom-nav;
-    background: var(--dark);
-    @include flex-center(none, none);
-
-    @media screen and (min-width: 1024px) {
-        justify-content: center;
-    }
-}
-
-.menu {
-    max-width: 1210px;
-    width: 100vw;
-    justify-self: center;
-    position: relative;
-    left: -2px;
-    
-    &>div {
-        display: grid;
-        grid-template-columns: 213px auto;
     }
 }

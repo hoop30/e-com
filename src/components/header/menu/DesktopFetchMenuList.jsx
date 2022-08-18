@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import Commerce from '@chec/commerce.js'
-import { HeaderMenuList } from './HeaderMenuList'
-
+import { DesktopMenuList } from './DesktopMenuList'
 
 const commerce = new Commerce('pk_test_46054d518a6be8f690e1432a52a28b5586392960bbb91');
 
-export class FetchMenuList extends Component {
+export class DesktopFetchMenuList extends Component {
     
     constructor(props) {
         super(props)
@@ -56,8 +55,6 @@ export class FetchMenuList extends Component {
     render() {
         const { category, subList } = this.state
         
-        return (
-            <HeaderMenuList category={category} subList={subList} setSublist={this.setSublist} resetSubList={this.resetSubList}/>
-        )
+        return <DesktopMenuList category={category} subList={subList} setSublist={this.setSublist} resetSubList={this.resetSubList}/>
     }
 }

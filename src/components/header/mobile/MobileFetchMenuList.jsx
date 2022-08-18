@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import Commerce from '@chec/commerce.js'
 import { MobileMenuList } from './MobileMenuList'
 
-
 const commerce = new Commerce('pk_test_46054d518a6be8f690e1432a52a28b5586392960bbb91');
-
 
 export class MobileFetchMenuList extends Component {
 
@@ -34,10 +32,6 @@ export class MobileFetchMenuList extends Component {
         const { category } = this.state
         const { classStyle } = this.props
 
-        return (
-
-            <MobileMenuList category={category} classStyle={classStyle}/>
-
-        )
+        return <MobileMenuList category={category} classStyle={classStyle}/>
     }
 }

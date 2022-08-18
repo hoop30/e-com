@@ -27,7 +27,6 @@ export function MobileMenuList({ category, classStyle }) {
     }
 
     for (const key in liListe) {
-        
         // to set if under category exist
         if (liListe[key].children !== undefined) {
             const newLi = <li key={liListe[key].name}>

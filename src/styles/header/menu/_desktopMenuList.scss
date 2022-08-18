@@ -1,0 +1,10 @@
+@import '../../mixin';
+
+.desktop-menu {
+    display: grid;
+    grid-template-columns: 213px auto;
+}
+
+.CategoryListBox {
+    z-index: 2;
+}

@@ -1,0 +1,72 @@
+@import '../../mixin';
+
+.MobileMenuBtn {
+    height: 100%;
+    width: 45px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    @include flex-center(center, center, column);
+    transition: 0.3s ease-out;
+
+    &>p {
+        font-size: 0.6em;
+        font-weight: 600;
+        color: var(--grey);
+        transition: 0.05s ease-out;
+
+        @media screen and (max-width: 480px) {
+            display: none;
+        }
+    }
+
+    &:hover {
+
+        &>p {
+            color: var(--white);
+        }
+    }
+
+    @media screen and (min-width: 480px) {
+        width: 70px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        display: none;
+    }
+}
+
+.menuBtn {
+    margin: 8px 8px;
+    height: 30px;
+    width: 30px;
+    @include flex-center(space-around, center, column);
+
+    &>.line {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--white);
+        transition: transform 0.3s ease-out, opacity 0.1s ease-out;
+    }
+
+    &.active {
+        justify-content: center;
+
+        &>.l1 {
+            opacity: 0;
+        }
+
+        &>.l2 {
+            transform: translateY(1px) rotate(135deg);
+        }
+
+        &>.l3 {
+            transform: translateY(-1px) rotate(405deg);
+        }
+
+        &>.l4 {
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.SubCategoryList {
+    position: relative;
+    left: -2px;
+    z-index: 1;
+    background: var(--pale);
+    border: solid 2px var(--dark);
+    border-top: none;
+    width: 170px;
+    height: 230px;
+    padding: 10px;
+    
+    &>li{
+        margin-bottom: 8px;
+        
+        &>a {
+            font-size: 0.9em;
+            color: var(--dark);
+            font-weight: 600;
+
+            &:hover {
+                text-decoration: underline !important;
+            }
+        }
+    }
+}

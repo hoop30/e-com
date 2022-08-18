@@ -2,7 +2,7 @@ import React from 'react'
 import { IoIosArrowForward } from "react-icons/io"
 import { Link } from "react-router-dom";
 
-export function HeaderMenuCategoryList({categorys, onsetSublist}) {
+export function CategoryList({categorys, onsetSublist}) {
     
     let licategory = []
     
@@ -24,8 +24,6 @@ export function HeaderMenuCategoryList({categorys, onsetSublist}) {
         </li>
 
         licategory.unshift(newCategory)
-
-        
     }
   
     return licategory
