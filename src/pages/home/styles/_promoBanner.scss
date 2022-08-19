@@ -1,13 +1,66 @@
-.PromoBanner {
+@import '../../../styles/mixin';
+
+.promoBanner {
+    max-width: 1210px;
+    max-height: 765px;
     width: 100%;
-    height: 215px;
+    height: calc(100vw /1.6);
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+
+    &>div {
+        position: relative;
+
+        &>.indicators {
+            display: none !important;
+            position: absolute;
+            z-index: 1;
+            bottom: 60px;
+            width: 100%;
+
+            @media screen and (min-width: 1024px) {
+                display: flex !important;
+            }
+        }
+    }
+}
+
+.indicator {
+    cursor: pointer;
+    width: 130px;
+    height: 59px;
+    margin-right: 15px;
+    overflow: hidden;
+    filter: brightness(40%);
+    transition: 300ms ease-out;
+    @include flex-center(none,center);
+
+    &:hover {
+        filter: brightness(80%);
+    }
+
+    &.active {
+        filter: none;
+    }
 
     &>img {
         width: 100%;
         height: auto;
+    }
+
+    
+}
+
+.each-slide {
+
+    &>img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.react-slideshow-container {
+
+    &>button {
+        display: none !important;
     }
 }

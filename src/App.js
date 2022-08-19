@@ -9,6 +9,7 @@ import { ProductsSubList } from './pages/productsSubList/ProductsSubList'
 import { Product } from './pages/product/Product'
 import { Cart } from './pages/cart/Cart'
 import MenuHiddenContextProvider from './context/MenuHiddenContext'
+import 'react-slideshow-image/dist/styles.css'
 
 
 function App() {

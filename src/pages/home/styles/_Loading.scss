@@ -1,0 +1,27 @@
+@import '../../../styles//mixin';
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.loading {
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: rotation 2s infinite linear;
+    @include flex-center(center,center);
+
+    &>div {
+        border-radius: 50%;
+        width: 56px;
+        height: 56px;
+        background: var(--grey);
+    }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContentProducts } from './ContentProducts'
+import { ContentProductSlide } from './ContentProductSlide'
 import { ContentMap } from './ContentMap'
 import { ContentPromo } from './ContentPromo'
 import { ContentService } from './ContentService'
@@ -8,7 +8,7 @@ export function Content() {
 
     return (
         <div className='content'>
-            <ContentProducts/>
+            <ContentProductSlide/>
             <ContentMap/>
             <ContentPromo/>
             <ContentService/>

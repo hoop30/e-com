@@ -4,3 +4,24 @@
 @use './styles/contentMap';
 @use './styles/contentPromo';
 @use './styles/contentService';
+@use './styles/Loading';
+
+@import '../../styles/mixin';
+
+.home {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "top"
+    "bottom";
+    justify-items: center;
+
+    &>.promoBanner {
+        grid-area: top;
+    }
+
+    &>.content {
+        grid-area: bottom;
+    }
+}

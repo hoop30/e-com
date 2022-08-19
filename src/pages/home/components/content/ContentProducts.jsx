@@ -1,40 +1,47 @@
-import React from 'react'
-import { IoIosArrowBack } from 'react-icons/io'
-import { IoIosArrowForward } from 'react-icons/io'
+import React, { useState, useEffect } from 'react'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
-import { ProductPhoto } from '../../../../utils/ProductPhoto'
-//import productData from '../../../../data/productData.json'
 import { FormatPrice } from '../../../../utils/FormatPrice'
+import { FetchProducts } from '../../../../utils/FetchProducts'
 
-export function ContentProducts() {
 
-    const photo = ProductPhoto()
-    const newPhoto = photo['Usb superKey'][0]
-    const name = "Mon super ordi"
+export function ContentProducts({ number }) {
+    const [products, setProducts] = useState()
 
-    return (
-        <div className='ContentProducts'>
-            <h2>PRODUITS</h2>
+    useEffect(() => {
+        FetchProducts(setProducts);
+    }, []);
+
+    if (products !== undefined) {
+        const name = products[number].name
+        const image = products[number].image.url
+        const price = products[number].price.raw
+
+        return (
             <div className='productSlide'>
-                <div className='arrowLeft'>
-                    <IoIosArrowBack size="3em" className='arrow'/>
-                </div>
                 <div className='productBox'>
                     <a href='index.html' className='productBoxphoto'>
-                        <img src={newPhoto} alt="" />
+                        <img src={image} alt="" />
                     </a>
                     <a href='index.html' className='productName'>{name}</a>
                     <div className='price'>
-                        <FormatPrice className='productPrice' price="100.90"/>
+                        <FormatPrice className='productPrice' price={price} />
                         <button>
-                            <MdOutlineAddShoppingCart size="2em"/>
+                            <MdOutlineAddShoppingCart size="2em" />
                         </button>
                     </div>
                 </div>
-                <div className='arrowRight'>
-                    <IoIosArrowForward size="3em" className='arrow'/>
+            </div>
+        ) 
+
+    } else {
+        return (
+            <div className='productSlide'>
+                <div className='productBox'>
+                    <div className="loading">
+                        <div></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
