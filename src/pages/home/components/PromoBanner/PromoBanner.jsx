@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import imgPromo50 from '../../../../assets/img/promo/promo50.jpg'
 import imgPromoBFS from '../../../../assets/img/promo/promoBFS.jpg'
 import imgPromoBlackFriday from '../../../../assets/img/promo/promoBlackFriday.jpg'
 import imgPromoOpen from '../../../../assets/img/promo/promoOpen.jpg'
 import imgPromoProducts from '../../../../assets/img/promo/promoProducts.jpg'
 import { Slide } from "react-slideshow-image"
+import { useEffect } from 'react'
 
 export function PromoBanner() {
 
@@ -17,10 +18,10 @@ export function PromoBanner() {
     }
 
     const indicators = (index) => (
-        <div className="indicator">
-            <img src={images[index+1]} alt="" />
+        <div className="indicator" id="indic">
+            <img src={images[index + 1]} alt="" />
         </div>
-        )
+    )
 
     const properties = {
         duration: 6000,
@@ -34,25 +35,49 @@ export function PromoBanner() {
         }
     }
 
+    function ok() {
+        console.log('ok')
+    }
+
+
+    var targetNode = document.querySelectorAll('#indic')
+
+    var config = { attributes: true}
+
+    var callback = function(mutationsList) {
+        console.log('ok');
+        for(var mutation of mutationsList) {
+            if (mutation.type == 'attributes') {
+                console.log("L'attribut '" + mutation.attributeName + "' a été modifié.");
+            }
+        }
+    }
+
+    var observer = new MutationObserver(callback)
+
+    console.log(targetNode)
+    if (targetNode.length !== 0) {
+        targetNode.forEach(element => {
+            observer.observe(element, config)
+        });
+    }
+
     return (
-        // <div className='PromoBanner'>
-        //     <img src={src} alt=""></img>
-        // </div>
         <div className='promoBanner'>
-            <Slide {...properties} indicators={indicators}>
-                <div className="each-slide">
-                    <img src={imgPromo50} alt="" />
+            <Slide {...properties} indicators={indicators} onAnimationEnd={ok}>
+                <div className="each-slide" id='PromoSlide' >
+                    <img src={imgPromo50} alt="" className='' />
                 </div>
-                <div className="each-slide">
+                <div className="each-slide" id='PromoSlide2'>
                     <img src={imgPromoBFS} alt="" />
                 </div>
-                <div className="each-slide">
+                <div className="each-slide" id='PromoSlide'>
                     <img src={imgPromoBlackFriday} alt="" />
                 </div>
-                <div className="each-slide">
+                <div className="each-slide" id='PromoSlide'>
                     <img src={imgPromoOpen} alt="" />
                 </div>
-                <div className="each-slide">
+                <div className="each-slide" id='PromoSlide'>
                     <img src={imgPromoProducts} alt="" />
                 </div>
             </Slide>
