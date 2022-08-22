@@ -7,11 +7,13 @@ export function ContentService() {
         <div className='contentService'>
             <h2>CONFIGURATEUR PC :</h2>
             <a href="index.html">
-                <p>Créez en quelques clics <strong>un PC adapté à vos besoins et votre budget</strong> avec le Configurateur FUTURE et son <strong>moteur de compatibilité !</strong></p>
-                <button>
-                    JE CREE MON PC
-                    <IoIosArrowForward size="0.6em"/>
-                </button>
+                <div>
+                    <p>Créez en quelques clics <strong>un PC adapté à vos besoins et votre budget</strong> avec le Configurateur FUTURE et son <strong>moteur de compatibilité !</strong></p>
+                    <button>
+                        JE CREE MON PC
+                        <IoIosArrowForward size="0.6em" />
+                    </button>
+                </div>
                 <img src={configLove} alt="" />
             </a>
         </div>

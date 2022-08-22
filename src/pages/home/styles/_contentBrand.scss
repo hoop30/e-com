@@ -1,0 +1,33 @@
+@import '../../../styles/mixin';
+
+.contentBrand {
+    background: var(--grey);
+    display: none;
+    position: relative;
+    padding-top: 30px;
+    
+
+    &>button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    &>ul {
+        @include flex-center(center, center);
+        padding-top: 30px;
+        padding-bottom: 30px;
+        
+        &>li {
+            @include flex-center(center, none);
+            &>img {
+            width: 70%;
+            height: auto;
+            }
+        }
+    }
+
+    @media screen and (min-width: 770px) {
+        @include flex-center(none, center, column);
+    }
+}

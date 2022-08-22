@@ -3,6 +3,14 @@ import { useState } from "react";
 import { Slide } from "react-slideshow-image"
 import { ContentProducts } from './ContentProducts'
 import 'react-slideshow-image/dist/styles.css';
+import { useEffect } from "react";
+import { IoIosArrowBack } from 'react-icons/io'
+import { IoIosArrowForward } from 'react-icons/io'
+
+const buttonStyle = {
+    background: 'none',
+    border: '0',
+};
 
 const properties = {
     duration: 5000,
@@ -11,6 +19,8 @@ const properties = {
     indicators: true,
     arrows: true,
     pauseOnHover: true,
+    prevArrow: <button style={{ ...buttonStyle }} className='product-slide-btn'><IoIosArrowBack size='3em'/></button>,
+    nextArrow: <button style={{ ...buttonStyle }} className='product-slide-btn'><IoIosArrowForward size='3em'/></button>,
     onChange: (oldIndex, newIndex) => {
         //console.log(`slide transition from ${oldIndex} to ${newIndex}`);
     }
@@ -18,7 +28,7 @@ const properties = {
 
 export const ContentProductSlide = () => {
 
-    const [slideNumber, setslideNumber] = useState(2)
+    const [slideNumber, setslideNumber] = useState(0)
     
     window.onresize = SlideLayout
     function SlideLayout() {
@@ -32,6 +42,10 @@ export const ContentProductSlide = () => {
             setslideNumber(3)
         }
     }
+
+    useEffect(() => {
+        SlideLayout()
+    }, [])
     
     return (
         <div className="ContentProducts">

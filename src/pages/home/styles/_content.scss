@@ -1,5 +1,27 @@
 .content {
-    background: var(--grey);
     max-width: 1210px;
     width: 100%;
+
+    
+
+    @media screen and (min-width: 480px) {
+        padding: 0 20px 40px 20px;
+    }
+
+    @media screen and (min-width: 770px) {
+        display: grid;
+        grid-template-columns: 75% 25%;
+        grid-template-areas:
+        "main side";
+
+        &>.main {
+            grid-area: main;
+            background: var(--grey);
+        }
+    }
+
+    @media screen and (min-width: 1210px) {
+        padding: 0 0 40px 0;
+    }
+
 }

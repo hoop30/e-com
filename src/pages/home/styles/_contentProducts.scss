@@ -1,7 +1,8 @@
 @import '../../../styles//mixin';
 
 .ContentProducts {
-    @include flex-center(center,unset,column);
+    background: var(--grey);
+    @include flex-center(center,none,column);
     padding-top: 30px;
     padding-bottom: 30px;
     border-bottom: solid 1px var(--greydark);
@@ -15,8 +16,9 @@
 }
 
 .content-slide {
-    @include flex-center(center, center)
+    @include flex-center(center, center);
 }
+
 .productSlide {
     width: 100%;
     display: grid;
@@ -49,7 +51,6 @@
         }
     }
     
-
     &>.productBox {
         width: 100%;
         grid-area: content;
@@ -100,7 +101,5 @@
                 height: 40px;
             }
         }
-
     }
 }
-
