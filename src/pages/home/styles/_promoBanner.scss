@@ -22,6 +22,13 @@
             }
         }
     }
+
+    &>div>.react-slideshow-container {
+
+        &>button {
+            display: none !important;
+        }
+    }
 }
 
 .indicator {
@@ -58,9 +65,3 @@
     }
 }
 
-.react-slideshow-container {
-
-    &>button {
-        display: none !important;
-    }
-}
