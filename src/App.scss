@@ -1,7 +1,9 @@
 @use 'styles/variables';
 @use 'styles/header/header';
 @use 'styles/footer/footer';
+@use 'styles/utils/utils';
 @use './pages/home/home';
+@use './pages/productsList/productsList';
 
 
 *,

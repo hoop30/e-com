@@ -22,7 +22,7 @@ export class DesktopFetchMenuList extends Component {
             })
         }
     }
-
+    //=====================
     setSublist = (e) => {
         if (this.state.category[e.target.name] !== undefined) {
             const subList = this.state.category[e.target.name].children
@@ -31,6 +31,7 @@ export class DesktopFetchMenuList extends Component {
             })
         }
     }
+    //=====================
 
     componentDidMount() {
         this.fetchCategory()

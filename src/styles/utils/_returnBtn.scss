@@ -1,0 +1,16 @@
+@import '../mixin';
+
+.return-btn {
+    width: 95px;
+    padding: 5px 11px;
+    
+    &>.return-link {
+        @include flex-center(space-between, center);
+        font-size: 0.95em;
+        color: var(--main);
+
+        &:hover {
+            text-decoration: underline !important;
+        }
+    }
+}

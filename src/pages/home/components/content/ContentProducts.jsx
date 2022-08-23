@@ -4,6 +4,7 @@ import { FormatPrice } from '../../../../utils/FormatPrice'
 import { FetchProducts } from '../../../../utils/FetchProducts'
 
 
+
 export function ContentProducts({ number }) {
     const [products, setProducts] = useState()
 

@@ -6,6 +6,7 @@ import 'react-slideshow-image/dist/styles.css';
 import { useEffect } from "react";
 import { IoIosArrowBack } from 'react-icons/io'
 import { IoIosArrowForward } from 'react-icons/io'
+import { useCallback } from "react";
 
 const buttonStyle = {
     background: 'none',
@@ -30,10 +31,7 @@ export const ContentProductSlide = () => {
 
     const [slideNumber, setslideNumber] = useState(0)
     
-    window.onresize = SlideLayout
-    function SlideLayout() {
-    console.log(slideNumber);
-
+    const SlideLayout = useCallback(() => {
         if (window.innerWidth < 480 && slideNumber !== 1) {
             setslideNumber(1)
         } else if (window.innerWidth > 480 && window.innerWidth < 780 && slideNumber !== 2) {
@@ -41,11 +39,13 @@ export const ContentProductSlide = () => {
         } else if (window.innerWidth > 780 && slideNumber !== 3) {
             setslideNumber(3)
         }
-    }
-
+    }, [slideNumber])
+    
+    window.onresize = SlideLayout
+    
     useEffect(() => {
         SlideLayout()
-    }, [])
+    }, [SlideLayout])
     
     return (
         <div className="ContentProducts">
