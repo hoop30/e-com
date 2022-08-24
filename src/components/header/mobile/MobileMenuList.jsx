@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { BsThreeDots } from 'react-icons/bs'
 import { IoIosArrowBack } from 'react-icons/io'
 
-export function MobileMenuList({ category, classStyle }) {
+export function MobileMenuList({ categorys, classStyle }) {
 
     let ul = []
     const [liListe, setLislist] = useState()
@@ -13,21 +13,21 @@ export function MobileMenuList({ category, classStyle }) {
     }
 
     // reset position when menu is closed
-    if (liListe !== category && liListe !== undefined && classStyle.includes("hidden")) {
+    if (liListe !== categorys && liListe !== undefined && classStyle.includes("hidden")) {
         returnBackSet()
     }
     
     function returnBackSet() {
-        setLislist(category)
+        setLislist(categorys)
     }
 
     // set position
     function liListeset(e) {
-        setLislist(category[e.target.name].children)
+        setLislist(categorys[e.target.name].children)
     }
 
     for (const key in liListe) {
-        // to set if under category exist
+        // to set if under categorys exist
         if (liListe[key].children !== undefined) {
             const newLi = <li key={liListe[key].name}>
                 <button onClick={liListeset} name={key}>
@@ -49,7 +49,7 @@ export function MobileMenuList({ category, classStyle }) {
     }
 
     // implement return btn
-    if (liListe !== category) {
+    if (liListe !== categorys) {
         const returnBack = <li key='return'>
             <button onClick={returnBackSet} className="return">
                 <IoIosArrowBack/>

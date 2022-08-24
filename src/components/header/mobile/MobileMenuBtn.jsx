@@ -1,14 +1,20 @@
-import React, { useState } from 'react'
-import { MobileFetchMenuList } from './MobileFetchMenuList'
+import React, { useState, useEffect } from 'react'
+import { MobileMenuList } from './MobileMenuList'
+import { FetchCategorys } from '../../../utils/FetchCategorys'
 
 export function MobileMenuBtn() {
     
+    const [categorys, setCategorys] = useState()
     const [menuBtnClass, setMenuBtnClass] = useState(true)
     let btnClass = "menuBtn"
     let ProductsMenuClass = "productsMenu hidden"
     
     menuBtnClass ? btnClass = "menuBtn" : btnClass = "menuBtn active"
     menuBtnClass ? ProductsMenuClass = "productsMenu hidden" : ProductsMenuClass = "productsMenu"
+
+    useEffect(() => {
+        FetchCategorys(setCategorys)
+    }, [])
 
     function userClick() {
         setMenuBtnClass(!menuBtnClass)
@@ -33,7 +39,7 @@ export function MobileMenuBtn() {
                 </div>
                 <p>MENU</p>
             </button>
-            <MobileFetchMenuList classStyle={ProductsMenuClass}/>
+            <MobileMenuList categorys={categorys}classStyle={ProductsMenuClass}/>
         </React.Fragment>
     )
 }

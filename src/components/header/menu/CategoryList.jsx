@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { useContext } from 'react'
 import { LocationContext } from '../../../context/LocationContext'
 
-export function CategoryList({categorys, onsetSublist}) {
+export function CategoryList({categorys, onSetSubCategorys}) {
 
     const {setLocationContext} = useContext(LocationContext)
     let licategory = []
@@ -17,7 +17,7 @@ export function CategoryList({categorys, onsetSublist}) {
         const cat = categorys[key].name
 
         const newCategory = <li className={liclass} key={key} name={cat}>
-            <Link to={"/ProductsList"} onMouseEnter={onsetSublist} name={cat} onClick={setLocationContext}>
+            <Link to={"/ProductsList"} onMouseEnter={onSetSubCategorys} name={cat} onClick={setLocationContext}>
                 <div>
                     <img src={logo} alt="" width="30px" height="30px" name={cat}/>
                     <p>{cat}</p>

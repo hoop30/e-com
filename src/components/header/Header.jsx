@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { HeaderMenu } from "./bottomBar/HeaderMenu";
 import { ScrollListener } from '../../utils/ScrollListener'
-import { DesktopFetchMenuList } from './menu/DesktopFetchMenuList'
+import { DesktopMenuList } from './menu/DesktopMenuList'
 import { MenuHiddenContext } from '../../context/MenuHiddenContext'
 import { TopBar } from './topBar/TopBar'
 
@@ -24,7 +24,7 @@ export function Header() {
                 </div>
 
                 <div className={MenuHidden}>       
-                    <DesktopFetchMenuList />
+                    <DesktopMenuList />
                 </div>
             
         </header>

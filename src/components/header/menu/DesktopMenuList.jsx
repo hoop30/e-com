@@ -1,20 +1,43 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { CategoryList } from './CategoryList'
 import { SubCategoryList } from './SubCategoryList'
 import { MenuHiddenContext } from '../../../context/MenuHiddenContext'
+import { FetchCategorys } from '../../../utils/FetchCategorys'
 
-export function DesktopMenuList({ category, subList, setSublist, resetSubList}) {
-    const { setMenu, unSetMenu } = useContext(MenuHiddenContext)
+export function DesktopMenuList({ subList, setSublist, resetSubList}) {
+    const { MenuHidden, setMenu, unSetMenu } = useContext(MenuHiddenContext)
+    const [categorys, setCategorys] = useState()
+    const [subcategorys, setSubCategorys] = useState([])
+    
+    useEffect(() => {
+        FetchCategorys(setCategorys);
+    }, []);
+    
+    if (categorys !== undefined && MenuHidden.includes('hidden')) {
+        if (subcategorys !== categorys[categorys.length - 1].children) {
+            setSubCategorys(categorys[categorys.length - 1].children)
+        }
+    }
 
+    function onSetSubCategorys(e) {
+        if (e.target.name !== undefined) {
+            categorys.forEach(category => {
+                if (category.name === e.target.name) {
+                    setSubCategorys(category.children)
+                }
+            })
+        }
+    }
+    
     return (
             <div className="desktop-menu">
                 <div className='CategoryListBox'>
                     <ul className='CategoryList' onMouseEnter={setMenu} onMouseLeave={unSetMenu}>
-                        <CategoryList categorys={category} onsetSublist={setSublist} />
+                        <CategoryList categorys={categorys} onSetSubCategorys={onSetSubCategorys} />
                     </ul>
                 </div>
                 <ul className='SubCategoryList' onMouseEnter={setMenu} onMouseLeave={unSetMenu}>
-                    <SubCategoryList categorys={category} subList={subList} onresetSubList={resetSubList} />
+                    <SubCategoryList categorys={categorys} subcategorys={subcategorys} onresetSubList={resetSubList} />
                 </ul>
             </div>
     )
