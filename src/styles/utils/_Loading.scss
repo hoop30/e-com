@@ -1,0 +1,81 @@
+@import '../mixin';
+
+@keyframes rotation {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+
+.loading {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    @include flex-center(center, center);
+    
+
+    &>.round {
+        position: absolute;
+        background: black;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+
+        &.r1 {
+            transform: rotate(0) translateX(25px);
+            background: rgba(0, 0, 0, 1);
+            animation: infinite 1s rotation linear;
+            animation-delay: calc(1s / 8 * 0);
+        }
+
+        &.r2 {
+            transform: rotate(45deg) translateX(25px); 
+            animation: infinite 1s rotation linear;
+            animation-delay: calc(1s / 8 * 1);
+        }
+
+        &.r3 {
+            transform: rotate(90deg) translateX(25px);
+            
+            animation: infinite 1s rotation linear;
+            animation-delay: calc(1s / 8 * 2);
+        }
+
+        &.r4 {
+            transform: rotate(135deg) translateX(25px);
+            
+            animation: infinite 1s rotation linear;
+            animation-delay: calc(1s / 8 * 3);
+        }
+
+        &.r5 {
+            transform: rotate(180deg) translateX(25px);
+            
+            animation: infinite 1s rotation linear;
+            animation-delay: calc(1s / 8 * 4);
+        }
+
+        &.r6 {
+            transform: rotate(225deg) translateX(25px);
+            
+            animation: infinite 1s rotation linear;
+            animation-delay: calc(1s / 8 * 5);
+        }
+
+        &.r7 {
+            transform: rotate(270deg) translateX(25px); 
+            
+            animation: infinite 1s rotation linear;
+            animation-delay: calc(1s / 8 * 6);
+        }
+
+        &.r8 {
+            transform: rotate(315deg) translateX(25px);
+            
+            animation: infinite 1s rotation linear;
+            animation-delay: calc(1s / 8 * 7);
+        }
+    }
+}

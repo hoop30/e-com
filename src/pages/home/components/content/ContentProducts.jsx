@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { FormatPrice } from '../../../../utils/FormatPrice'
 import { FetchProducts } from '../../../../utils/FetchProducts'
+import { Loading } from '../../../../utils/Loading'
 
 
 
@@ -38,9 +39,7 @@ export function ContentProducts({ number }) {
         return (
             <div className='productSlide'>
                 <div className='productBox'>
-                    <div className="loading">
-                        <div></div>
-                    </div>
+                    <Loading />
                 </div>
             </div>
         )

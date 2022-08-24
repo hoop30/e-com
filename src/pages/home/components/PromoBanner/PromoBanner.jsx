@@ -26,17 +26,14 @@ export function PromoBanner() {
         duration: 6000,
         transitionDuration: 500,
         infinite: true,
-        indicators: true,
-        arrows: true,
+        indicators: indicators,
+        arrows: false,
         pauseOnHover: true,
-        onChange: (oldIndex, newIndex) => {
-            //console.log(`slide transition from ${oldIndex} to ${newIndex}`);
-        }
     }
 
     return (
         <div className='promoBanner'>
-            <Slide {...properties} indicators={indicators}>
+            <Slide {...properties}>
                 <div className="each-slide" id='PromoSlide' >
                     <img src={imgPromo50} alt="" className='' />
                 </div>
