@@ -1,0 +1,32 @@
+@import '../../../styles/mixin';
+
+.pl-SubList {
+    @include flex-center(center,center,column);
+    margin-top: 20px;
+    padding-bottom: 30px;
+    &>h2 {
+        font-size: 1.4em;
+        text-align: center;
+        word-wrap: break-word;
+        padding-top: 25px;
+        padding-bottom: 20px;
+    }
+
+    @media screen and (min-width: 480px) {
+        background: var(--white);
+        padding-bottom: 5px;
+    }
+}
+
+.pl-box {
+    width: 100%;
+    @include flex-center(space-between, none, column);
+    gap: 10px;
+    padding: 0 10px;
+
+    @media screen and (min-width: 480px) {
+        @include flex-center(space-between, none, row);
+        flex-wrap: wrap;
+        gap: 0;
+    }
+}

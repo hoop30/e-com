@@ -1,0 +1,57 @@
+@import '../../../styles/mixin';
+
+
+.pl-subBox {
+    border: solid 2px var(--greydark);
+    @include flex-center(none, center);
+    gap: 8px;
+    color: var(--main);
+    font-size: 0.9em;
+
+    &>div>svg {
+        display: none;
+    }
+
+    @media screen and (min-width: 480px) {
+        @include flex-center(none, flex-start);
+        width: 48%;
+        margin: 1%;
+        font-size: 0.8em;
+
+        &>img {
+            width: 31%;
+            height: auto;
+            padding-bottom: 25px;
+        }
+
+        &>div>div {
+            height: 70px;
+            @include flex-center(none, center);
+
+            &>h3 {
+                line-height: 100%;
+            }
+        }
+
+
+        &>div>svg {
+            display: unset;
+            background: var(--greydark);
+            border-radius: 50%;
+            padding-top: 3px;
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    @media screen and (min-width: 990px) {
+        width: 31%;
+
+        &>img {
+            width: 120px;
+            height: 120px;
+            padding-bottom: 0;
+        }
+    }
+
+}

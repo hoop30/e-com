@@ -63,15 +63,30 @@ export function PLTopVente({ location, categorys, products }) {
         arrows: true,
         infinite: true,
         easing: "ease",
-        indicators: (i) => <div className="indicator">{i + 1}</div>
-      }
+        responsive: [
+            {
+                breakpoint: 450,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            }
+        ]
+    }
 
-    return (
-        <div>
-            <h2>TOP DES VENTES INFORMATIQUE :</h2>
-            <Slide {...properties}>
-                {productDiv}
-            </Slide>
-        </div>
-    )
+return (
+    <div className='pl-topVente'>
+        <h2>TOP DES VENTES INFORMATIQUE :</h2>
+        <Slide {...properties}>
+            {productDiv}
+        </Slide>
+    </div>
+)
 }

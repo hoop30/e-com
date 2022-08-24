@@ -1,8 +1,8 @@
 @import '../mixin';
 
 .return-btn {
-    width: 95px;
-    padding: 5px 11px;
+    width: 90px;
+    padding: 5px 10px 5px 5px;
     
     &>.return-link {
         @include flex-center(space-between, center);

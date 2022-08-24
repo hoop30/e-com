@@ -1,0 +1,19 @@
+@import '../../../styles/mixin';
+
+
+.pl-topVente {
+    padding-top: 30px;
+    padding-bottom: 45px;
+    margin-bottom: 25px;
+    @include flex-center(none, none, column);
+
+    &>h2 {
+        align-self: center;
+        padding-bottom: 30px;
+    }
+
+    @media screen and (min-width: 480px) {
+        margin-top: 20px;
+        background: var(--white);
+    }
+}

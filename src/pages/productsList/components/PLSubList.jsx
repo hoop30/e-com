@@ -24,8 +24,10 @@ export function PLSubList({location, categorys}) {
 
     return (
         <div className='pl-SubList'>
-            <h2>NOS CATÉGORIE IMFORMATIQUE :</h2>
-            {subListBox}
+            <h2>NOS CATÉGORIES IMFORMATIQUE :</h2>
+            <div className="pl-box">
+                {subListBox}
+            </div>
         </div>
     )
 }

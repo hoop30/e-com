@@ -6,7 +6,9 @@ export function PLBreadcrumb({location}) {
     return (
         <div className='pl-breadcrumb'>
             <ReturnBtn />
-            {location}
+            <div className="location">
+                {location}
+            </div>
         </div>
     )
 }
