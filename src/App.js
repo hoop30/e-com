@@ -5,7 +5,7 @@ import { Header } from './components/header/Header'
 import { Footer } from './components/footer/Footer'
 import { Home } from './pages/home/Home'
 import { ProductsList } from './pages/productsList/ProductsList'
-import { ProductsSubList } from './pages/productsSubList/ProductsSubList'
+import { CategorysList } from './pages/categorysList/CategorysList'
 import { Product } from './pages/product/Product'
 import { Cart } from './pages/cart/Cart'
 import MenuHiddenContextProvider from './context/MenuHiddenContext'
@@ -21,7 +21,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="ProductsList" element={<ProductsList />} />
-                    <Route path="ProductsSubList" element={<ProductsSubList />} />
+                    <Route path="CategorysList" element={<CategorysList />} />
                     <Route path="Product" element={<Product />} />
                     <Route path="Cart" element={<Cart />} />
                 </Routes>          

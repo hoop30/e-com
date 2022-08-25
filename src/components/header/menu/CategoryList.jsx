@@ -15,7 +15,7 @@ export function CategoryList({categorys, onSetSubCategorys}) {
         const cat = categorys[key].name
         const normCat = cat.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
         //===========
-        const toLink = `/ProductsList?category=${normCat}`
+        const toLink = `/CategorysList?category=${normCat}`
 
         const newCategory = <li className={liclass} key={key} name={cat}>
             <Link to={toLink} onMouseEnter={onSetSubCategorys} name={cat}>
