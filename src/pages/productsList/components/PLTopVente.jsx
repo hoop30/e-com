@@ -5,11 +5,14 @@ import { ProductDiv } from './ProductDiv'
 
 
 export function PLTopVente({ location, categorys, products }) {
-
+    let category = ''
     const subList = []
+    
     for (const key in categorys) {
-        if (categorys[key].name === location) {
-            //console.log(categorys[key].children)
+        const normCategory = categorys[key].name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+
+        if (normCategory === location) {
+            category = categorys[key].name
             for (const sub in categorys[key].children) {
                 subList.push(categorys[key].children[sub].name)
             }
@@ -62,10 +65,10 @@ export function PLTopVente({ location, categorys, products }) {
         prevArrow: <button style={{ ...buttonStyle }} className='product-slide-btn'><IoIosArrowBack size='3em' /></button>,
         nextArrow: <button style={{ ...buttonStyle }} className='product-slide-btn'><IoIosArrowForward size='3em' /></button>,
     }
-
+    console.log(category);
     return (
         <div className='pl-topVente'>
-            <h2>TOP DES VENTES INFORMATIQUE :</h2>
+            <h2>TOP DES VENTES {category.toUpperCase()} :</h2>
             <Slide {...properties}>
                 <div className="each-slide">
                     <ProductDiv subProduct={subProduct} number='0' />

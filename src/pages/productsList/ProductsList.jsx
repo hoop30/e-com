@@ -1,21 +1,18 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FetchProducts } from '../../utils/FetchProducts'
 import { FetchCategorys } from '../../utils/FetchCategorys'
 import { PLBreadcrumb } from './components/PLBreadcrumb'
-import { LocationContext } from '../../context/LocationContext'
 import { PLSubList } from './components/PLSubList'
 import { PLTopVente } from './components/PLTopVente'
+import { useLocation } from "react-router-dom"; 
 
 export function ProductsList() {
-    const { location, setLocationlocalStorage } = useContext(LocationContext)
+
+    const newLocation = useLocation()
+    const location = newLocation.search.substring(10)
+    
     const [categorys, setCategorys] = useState()
     const [products, setProducts] = useState()
-
-    if (location !== null) {
-        localStorage.setItem('location', location)
-    } else {
-        setLocationlocalStorage()
-    }
 
     useEffect(() => {
         FetchCategorys(setCategorys)
@@ -25,7 +22,7 @@ export function ProductsList() {
     return (
         <div className='productsList'>
             <div className="productsListBox">
-                <PLBreadcrumb location={location} />
+                <PLBreadcrumb location={location} categorys={categorys} />
                 <p className='productsList-topText'>L'informatique est partout aujourd'hui. Depuis les affichages publics en passant par votre salon, votre décodeur TV, et jusqu'à votre téléphone. FUTURE.com vous propose une immense sélection de produits afin de profiter de toutes les possibilités actuelles de l'informatique. Avec notre système de filtres complet vous trouverez facilement ce que vous cherchez et pourrez profiter de toute la puissance et de tout le confort de l'informatique moderne ! Nous vous proposons tout d'abord notre catégorie phare des pièces informatiques. Avec tous les produits que nous vous proposons vous pourrez créer votre système de toutes pièces, que vous ayez pour projet de
                     … <button>Lire la suite</button></p>
                 <PLSubList location={location} categorys={categorys} />

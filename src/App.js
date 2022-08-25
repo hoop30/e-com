@@ -10,13 +10,11 @@ import { Product } from './pages/product/Product'
 import { Cart } from './pages/cart/Cart'
 import MenuHiddenContextProvider from './context/MenuHiddenContext'
 import 'react-slideshow-image/dist/styles.css'
-import LocationContextProvider from './context/LocationContext'
 
 
 function App() {
     return (
         <React.Fragment>
-            <LocationContextProvider>
                 <MenuHiddenContextProvider>
                     <Header />
                 </MenuHiddenContextProvider>
@@ -26,8 +24,7 @@ function App() {
                     <Route path="ProductsSubList" element={<ProductsSubList />} />
                     <Route path="Product" element={<Product />} />
                     <Route path="Cart" element={<Cart />} />
-                </Routes>
-            </LocationContextProvider>
+                </Routes>          
             <Footer />
         </React.Fragment>
     );
