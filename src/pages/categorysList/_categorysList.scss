@@ -5,12 +5,12 @@
 
 @import '../../styles/mixin';
 
-.productsList {
+.categoryList {
     padding: 8px;
     background: var(--white);
     @include flex-center(center, center, column);
 
-    &>.productsListBox {
+    &>.categoryListBox {
         max-width: 1210px;
         width: 100%;
     }
@@ -21,7 +21,7 @@
     }
 }
 
-.productsList-topText {
+.categoryList-topText {
     position: relative;
     overflow: hidden;
     height: 45px;
@@ -68,7 +68,7 @@
     }
 }
 
-.productsList-bottomText {
+.categoryList-bottomText {
     font-size: 0.7em;
     color: var(--greydark);
     padding-bottom: 15px;

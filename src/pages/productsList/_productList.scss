@@ -1,0 +1,28 @@
+@use './styles/products';
+@use './styles/productsFilter';
+@use './styles/formProductsFilter';
+
+@import '../../styles/mixin';
+
+.productsList {
+    padding: 8px;
+    background: var(--white);
+    @include flex-center(center, center, column);
+
+    &>.productsListBox {
+        max-width: 1210px;
+        width: 100%;
+    }
+
+    @media screen and (min-width: 480px) {
+        padding: 10px 18px 0 18px;
+        background: var(--grey);
+    }
+}
+
+.productLayout {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-areas:
+    "Search products";
+}

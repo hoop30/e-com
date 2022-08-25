@@ -1,0 +1,44 @@
+.modal-body {
+    position: fixed;
+    top: 0;
+    padding-right: 17px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1040;
+    background-color: var(--white);
+    animation: fadein 0.5s ease-in-out;
+
+    &>button {
+        position: absolute;
+        z-index: 20;
+        right: 17px;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 0;
+        border: none;
+        color: var(--greydark);
+    }
+
+    &.fadeOut {
+        animation: fadeout 0.5s ease-in-out;
+    }
+}
+
+@keyframes fadein {
+	from {
+		transform: translateY(100vh);
+	}
+	to {
+		transform: none;
+	}
+}
+@keyframes fadeout {
+	from {
+		transform: none;
+	}
+	to {
+		transform: translateY(100vh);
+	}
+}

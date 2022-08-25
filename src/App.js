@@ -18,13 +18,13 @@ function App() {
                 <MenuHiddenContextProvider>
                     <Header />
                 </MenuHiddenContextProvider>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="ProductsList" element={<ProductsList />} />
-                    <Route path="CategorysList" element={<CategorysList />} />
-                    <Route path="Product" element={<Product />} />
-                    <Route path="Cart" element={<Cart />} />
-                </Routes>          
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="ProductsList" element={<ProductsList />} />
+                        <Route path="CategorysList" element={<CategorysList />} />
+                        <Route path="Product" element={<Product />} />
+                        <Route path="Cart" element={<Cart />} />
+                    </Routes>       
             <Footer />
         </React.Fragment>
     );

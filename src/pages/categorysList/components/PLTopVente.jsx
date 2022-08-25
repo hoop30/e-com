@@ -65,7 +65,7 @@ export function PLTopVente({ location, categorys, products }) {
         prevArrow: <button style={{ ...buttonStyle }} className='product-slide-btn'><IoIosArrowBack size='3em' /></button>,
         nextArrow: <button style={{ ...buttonStyle }} className='product-slide-btn'><IoIosArrowForward size='3em' /></button>,
     }
-    console.log(category);
+    
     return (
         <div className='pl-topVente'>
             <h2>TOP DES VENTES {category.toUpperCase()} :</h2>

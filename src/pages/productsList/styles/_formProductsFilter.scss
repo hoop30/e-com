@@ -1,0 +1,30 @@
+.formProductsFilter {
+    position: fixed;
+    z-index: 15;
+    top: 100vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    transition: opacity 1s;
+    transition: 0.5s ease-in-out;
+
+    &.fadeout {
+        transform: none;
+    }
+    &.fadein {
+        transform: translateY(-100vh)
+    }
+
+    @media screen and (min-width: 1024px) {
+        position: unset;
+        transition: none;
+        
+        &.fadeout {
+            transform: none;
+        }
+        &.fadein {
+            transform: none
+        }
+    }
+}
