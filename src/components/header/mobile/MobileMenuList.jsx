@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BsThreeDots } from 'react-icons/bs'
 import { IoIosArrowBack } from 'react-icons/io'
+import { Link } from 'react-router-dom'
 
 export function MobileMenuList({ categorys, classStyle }) {
 
@@ -38,10 +39,13 @@ export function MobileMenuList({ categorys, classStyle }) {
 
             ul.unshift(newLi)
         } else {
+            const normCat = liListe[key].name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+            const toLink = `/ProductsList?category=${normCat}`
+
             const newLi = <li key={liListe[key].name}>
-                <a href="index.html">
+                <Link to={toLink}>
                     {liListe[key].name}
-                </a>
+                </Link>
             </li>
 
             ul.unshift(newLi)

@@ -1,0 +1,79 @@
+@import '../../../styles/mixin';
+
+
+.productBox {
+    @include flex-center(none, none);
+    border-top: solid 1px var(--grey);
+    padding: 15px 10px;
+
+    &:last-child {
+        border-bottom: solid 1px var(--grey);
+    }
+
+    &>.image {
+        padding: 10px 10px 10px 0;
+        width: 95px;
+        
+        &>img {
+            width: 75px;
+            height: auto;
+        }
+    }
+
+    &>div {
+        @include flex-center(none, none, column);
+        gap: 10px;
+        width: 100%;
+
+        &>.name-stock {
+            @include flex-center(center, none, column);
+            gap: 10px;
+            
+            &>.name {
+                font-size: 0.9em;
+            }
+        }
+
+        &>.price {
+            @include flex-center(space-between, center);
+            width: 100%;
+            color: var(--main);
+            font-weight: 600;
+
+            &>button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                border-radius: 50%;
+                background: darkorange;
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media screen and (min-width: 770px) {
+            justify-content: space-between;
+            flex-direction: row;
+
+            &>.name-stock {
+                @include flex-center(center, center, column);
+            }
+
+            &>.price {
+                @include flex-center(center, center, column);
+                gap: 20px;
+                width: auto;
+                padding-left: 10px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+
+            &>.name-stock {
+                @include flex-center(space-between, center, row);
+                width: 100%;
+            }
+        }
+    }
+}

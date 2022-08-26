@@ -1,6 +1,9 @@
 @use './styles/products';
 @use './styles/productsFilter';
-@use './styles/formProductsFilter';
+@use './styles/productFilterBox';
+@use './styles/productBox';
+@use './styles/stock';
+@use './styles/productFilterForm';
 
 @import '../../styles/mixin';
 
@@ -21,8 +24,13 @@
 }
 
 .productLayout {
-    display: grid;
-    grid-template-columns: 25% 75%;
-    grid-template-areas:
-    "Search products";
+    background: var(--white);
+
+    @media screen and (min-width: 1024px) {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-areas:
+            "Search products";
+    }
 }
+

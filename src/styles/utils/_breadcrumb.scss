@@ -1,4 +1,4 @@
-@import '../../../styles/mixin';
+@import '../mixin';
 
 .pl-breadcrumb {
     @include flex-center(none, center);
@@ -11,5 +11,10 @@
         border-left: solid 2px var(--greydark);
         font-size: 0.95em;
         font-weight: 600;
+
+        @media screen and (min-width: 1024px) {
+            border: none;
+            padding: 5px 10px 5px 0;
+        }
     }
 }

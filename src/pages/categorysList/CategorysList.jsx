@@ -24,8 +24,10 @@ export function CategorysList() {
         <div className='categoryList'>
             <div className="categoryListBox">
                 <Breadcrumb location={location} categorys={categorys} />
-                <p className='categoryList-topText'>L'informatique est partout aujourd'hui. Depuis les affichages publics en passant par votre salon, votre décodeur TV, et jusqu'à votre téléphone. FUTURE.com vous propose une immense sélection de produits afin de profiter de toutes les possibilités actuelles de l'informatique. Avec notre système de filtres complet vous trouverez facilement ce que vous cherchez et pourrez profiter de toute la puissance et de tout le confort de l'informatique moderne ! Nous vous proposons tout d'abord notre catégorie phare des pièces informatiques. Avec tous les produits que nous vous proposons vous pourrez créer votre système de toutes pièces, que vous ayez pour projet de
-                    … <button>Lire la suite</button></p>
+                <p className='categoryList-topText'>
+                    L'informatique est partout aujourd'hui. Depuis les affichages publics en passant par votre salon, votre décodeur TV, et jusqu'à votre téléphone. FUTURE.com vous propose une immense sélection de produits afin de profiter de toutes les possibilités actuelles de l'informatique. Avec notre système de filtres complet vous trouverez facilement ce que vous cherchez et pourrez profiter de toute la puissance et de tout le confort de l'informatique moderne ! Nous vous proposons tout d'abord notre catégorie phare des pièces informatiques. Avec tous les produits que nous vous proposons vous pourrez créer votre système de toutes pièces, que vous ayez pour projet de
+                    … <button>Lire la suite</button>
+                </p>
                 <PLSubList location={location} categorys={categorys} />
                 <PLTopVente location={location} categorys={categorys} products={products} />
                 <p className='categoryList-bottomText'>

@@ -1,0 +1,52 @@
+@import '../../../styles/mixin';
+
+.stock {
+    @include flex-center(none, center);
+    font-size: 0.7em;
+
+    &>.span-dispo {
+        color: var(--greydark);
+
+        &::after {
+            content: " : ";
+        }
+    }
+
+    &>.span-stock {
+        
+        &.instock {
+            color: green;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        @include flex-center(center, center, column);
+        position: relative;
+
+        &>.span-dispo {
+            position: absolute;
+            top: -6px;
+            background: var(--white);
+            width: 60px;
+            text-align: center;
+
+            &::after {
+                content: none;
+            }
+
+            &>span {
+                font-weight: 600;
+            }
+        }
+        &>.span-stock {
+            @include flex-center(flex-end, center, column);
+            border: solid 2px var(--grey);
+            width: 105px;
+            height: 70px;
+            font-weight: 600;
+            padding: 10px 30px;
+            text-align: center;
+        }
+    }
+
+}

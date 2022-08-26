@@ -1,7 +1,6 @@
 import React from 'react'
-import { Modal } from './Modal'
 import { useProductsFilter } from '../../../hooks/useProductsFilter'
-import { ContentProductFilter } from './ContentProductFilter'
+import { ProductFilterBox } from './ProductFilterBox'
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io'
 
 export function ProductsFilter() {
@@ -40,7 +39,7 @@ export function ProductsFilter() {
 
     return (
         <React.Fragment>
-            <ContentProductFilter isShowing={isShowing} />
+            <ProductFilterBox isShowing={isShowing} />
             <button className='productsFilter-btn' onClick={toggleSend}>
                 {btnContent}
             </button>
