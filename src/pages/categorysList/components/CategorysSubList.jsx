@@ -1,7 +1,7 @@
 import React from 'react'
-import { PLCategoryBox } from './PLCategoryBox'
+import { CategorysBox } from './CategorysBox'
 
-export function PLSubList({location, categorys}) {
+export function CategorysSubList({location, categorys}) {
     let subListBox = []
     let category = ''
 
@@ -16,7 +16,7 @@ export function PLSubList({location, categorys}) {
                 for (const subCategory in suList) {
                     const name = suList[subCategory].name
                     const photo = suList[subCategory].assets[0].url
-                    const newBox = PLCategoryBox(name, photo)
+                    const newBox = CategorysBox(name, photo)
                     
                     subListBox.push(newBox)
                 }
@@ -25,9 +25,9 @@ export function PLSubList({location, categorys}) {
     }
     
     return (
-        <div className='pl-SubList'>
+        <div className='categorys-subList'>
             <h2>NOS CATÉGORIES {category.toUpperCase()} :</h2>
-            <div className="pl-box">
+            <div className="categorys-subList-box">
                 {subListBox}
             </div>
         </div>

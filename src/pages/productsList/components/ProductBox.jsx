@@ -2,6 +2,7 @@ import React from 'react'
 import { FormatPrice } from '../../../utils/FormatPrice'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { Stocks } from './Stock'
+import { Link } from 'react-router-dom'
 
 export function ProductBox({ products, location }) {
 
@@ -10,18 +11,19 @@ export function ProductBox({ products, location }) {
 
         const catProduct = product.categories[0].name
         const normCatProduct = catProduct.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-
+        
         if (normCatProduct === location) {
-
+            
             const image = product.image.url
             const name = product.name
             const stock = product.inventory.available
             const price = product.price.raw
+            const link = `/Product?product=${name}`
 
             const newProduct = <div className='productBox' key={name}>
-                <div className="image">
+                <Link className="image" to={link}>
                     <img src={image} alt="" width="75px" height="75px" />
-                </div>
+                </Link>
                 <div>
                     <div className="name-stock">
                         <div className='name'>

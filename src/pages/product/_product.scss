@@ -1,0 +1,17 @@
+@use './styles/productLayout';
+
+@import '../../styles/mixin';
+
+.products-page {
+    @include flex-center(center, center, column);
+    
+    &>.product-page-box {
+        max-width: 1210px;
+
+    }
+    @media screen and (min-width: 480px) {
+        
+        background: var(--grey);
+        padding: 10px 20px;
+    }
+}

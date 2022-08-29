@@ -4,7 +4,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import { ProductDiv } from './ProductDiv'
 
 
-export function PLTopVente({ location, categorys, products }) {
+export function TopVente({ location, categorys, products }) {
     let category = ''
     const subList = []
     
@@ -67,7 +67,7 @@ export function PLTopVente({ location, categorys, products }) {
     }
     
     return (
-        <div className='pl-topVente'>
+        <div className='topVente'>
             <h2>TOP DES VENTES {category.toUpperCase()} :</h2>
             <Slide {...properties}>
                 <div className="each-slide">

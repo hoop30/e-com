@@ -1,7 +1,7 @@
 @import '../../../styles/mixin';
 
 
-.pl-subBox {
+.categorys-sub-Box {
     border: solid 2px var(--greydark);
     @include flex-center(none, center);
     gap: 8px;

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { FetchProducts } from '../../utils/FetchProducts'
 import { FetchCategorys } from '../../utils/FetchCategorys'
 import { Breadcrumb } from '../../utils/Breadcrumb'
-import { PLSubList } from './components/PLSubList'
-import { PLTopVente } from './components/PLTopVente'
+import { CategorysSubList } from './components/CategorysSubList'
+import { TopVente } from './components/TopVente'
 import { useLocation } from "react-router-dom"; 
 
 export function CategorysList() {
@@ -28,8 +28,8 @@ export function CategorysList() {
                     L'informatique est partout aujourd'hui. Depuis les affichages publics en passant par votre salon, votre décodeur TV, et jusqu'à votre téléphone. FUTURE.com vous propose une immense sélection de produits afin de profiter de toutes les possibilités actuelles de l'informatique. Avec notre système de filtres complet vous trouverez facilement ce que vous cherchez et pourrez profiter de toute la puissance et de tout le confort de l'informatique moderne ! Nous vous proposons tout d'abord notre catégorie phare des pièces informatiques. Avec tous les produits que nous vous proposons vous pourrez créer votre système de toutes pièces, que vous ayez pour projet de
                     … <button>Lire la suite</button>
                 </p>
-                <PLSubList location={location} categorys={categorys} />
-                <PLTopVente location={location} categorys={categorys} products={products} />
+                <CategorysSubList location={location} categorys={categorys} />
+                <TopVente location={location} categorys={categorys} products={products} />
                 <p className='categoryList-bottomText'>
                     … monter un PC gamer, un PC de bureau, un Media center, un serveur, une station de travail ou bien un projet plus spécial encore ! Vous avez les idées mais pas le temps d'assembler ou installer votre système ? Nous le faisons pour vous !
                 </p>

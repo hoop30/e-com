@@ -1,10 +1,10 @@
 import React from 'react'
 import { IoIosArrowDown } from 'react-icons/io'
 
-export function PLCategoryBox(name, photo) {
-    
+export function CategorysBox(name, photo) {
+
     return (
-            <div className='pl-subBox' key={name}>
+            <div className='categorys-sub-Box' key={name}>
                 <img src={photo} alt="" width='88px' height='88px'/>
                 <div>
                     <div>

@@ -1,6 +1,6 @@
 @import '../../../styles/mixin';
 
-.pl-SubList {
+.categorys-subList {
     @include flex-center(center,center,column);
     margin-top: 20px;
     padding-bottom: 30px;
@@ -18,7 +18,7 @@
     }
 }
 
-.pl-box {
+.categorys-subList-box {
     width: 100%;
     @include flex-center(space-between, none, column);
     gap: 10px;

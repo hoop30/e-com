@@ -40,7 +40,7 @@ export function ProductFilterForm() {
 
     return (
         <form action="filter" className='productFilterForm'>
-            <h2>Filtrer les produits :</h2>
+            <h2>FILTRER LES PRODUITS :</h2>
             <div className='form form-search'>
                 <label htmlFor="designation">CHERCHER UNE RÉFÉRENCE</label>
                 <div className='input-search'>
