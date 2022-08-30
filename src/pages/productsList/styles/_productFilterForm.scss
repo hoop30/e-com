@@ -13,6 +13,7 @@
     @media screen and (min-width: 1024px) {
         background: var(--pale);
         align-items: unset;
+        min-height: 300px;
 
         &>h2 {
             border-bottom: solid 2px var(--white);
@@ -50,6 +51,10 @@
                 height: 100%;
                 border: solid 1px var(--grey);
                 border-right: none;
+
+                &:focus {
+                    outline: none;
+                }
             }
 
             &>button {
@@ -112,15 +117,10 @@
             }
 
             &>.current-price {
-                position: relative;
-                left: -10px;
-                width: 96%;
+                width: 100%;
                 &>p {
-                    position: absolute;
-                    padding: 0;
+                    text-align: center;
                     font-weight: 400;
-                    
-                    left: 100%;
                 }
             }
 

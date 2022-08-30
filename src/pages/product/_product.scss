@@ -4,6 +4,8 @@
 
 .products-page {
     @include flex-center(center, center, column);
+    background: var(--white);
+    padding-top: 8px;
     
     &>.product-page-box {
         max-width: 1210px;

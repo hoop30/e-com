@@ -31,12 +31,12 @@ export function DesktopMenuList({ subList, setSublist, resetSubList}) {
     
     return (
             <div className="desktop-menu">
-                <div className='category-list-box'>
-                    <ul className='category-list' onMouseEnter={setMenu} onMouseLeave={unSetMenu}>
+                <div className='menu-category-list-box'>
+                    <ul className='menu-category-list' onMouseEnter={setMenu} onMouseLeave={unSetMenu}>
                         <CategoryList categorys={categorys} onSetSubCategorys={onSetSubCategorys} />
                     </ul>
                 </div>
-                <ul className='sub-category-list' onMouseEnter={setMenu} onMouseLeave={unSetMenu}>
+                <ul className='sub-menu-category-list' onMouseEnter={setMenu} onMouseLeave={unSetMenu}>
                     <SubCategoryList categorys={categorys} subcategorys={subcategorys} onresetSubList={resetSubList} />
                 </ul>
             </div>

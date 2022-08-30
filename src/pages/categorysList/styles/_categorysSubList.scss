@@ -20,12 +20,12 @@
 
 .categorys-sub-list-box {
     width: 100%;
-    @include flex-center(space-between, none, column);
+    @include flex-center(flex-start, none, column);
     gap: 10px;
     padding: 0 10px;
 
     @media screen and (min-width: 480px) {
-        @include flex-center(space-between, none, row);
+        @include flex-center(flex-start, none, row);
         flex-wrap: wrap;
         gap: 0;
     }

@@ -1,7 +1,7 @@
-.sub-category-list {
+.sub-menu-category-list {
     position: relative;
     left: -2px;
-    z-index: 1;
+    z-index: 99;
     background: var(--pale);
     border: solid 2px var(--dark);
     border-top: none;

@@ -30,12 +30,6 @@ export function ProductLayout({ location, products }) {
             }
         })
         
-        console.log(desc);
-
-        //const desc = description.substring(0, description.length - 4)
-
-
-
         return (
             <div className='Product-layout-box'>
                 <h2>{name}</h2>

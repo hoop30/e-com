@@ -7,12 +7,12 @@
 
 @import '../../styles/mixin';
 
-.productsList {
+.products-list {
     padding: 8px;
     background: var(--white);
     @include flex-center(center, center, column);
 
-    &>.productsListBox {
+    &>.products-list-box {
         max-width: 1210px;
         width: 100%;
     }
@@ -23,7 +23,7 @@
     }
 }
 
-.productLayout {
+.product-layout {
     background: var(--white);
     margin: 25px 0;
 
