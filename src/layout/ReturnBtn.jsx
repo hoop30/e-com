@@ -5,13 +5,13 @@ import { RiHome2Line } from 'react-icons/ri'
 
 export function ReturnBtn() {
     return (
-        <div className='return-btn'>
-            <Link to={'/'} className='return-link'>
-                <div className="mobile-btn">
+        <div className='breadcrumb-return-btn'>
+            <Link to={'/'}>
+                <div className="breadcrumb-mobile-btn">
                     <IoIosArrowBack size='0.9em' />
                     Retour
                 </div>
-                <div className="desktop-btn">
+                <div className="breadcrumb-desktop-btn">
                     <RiHome2Line size='1.4em'/>
                 </div>
             </Link>

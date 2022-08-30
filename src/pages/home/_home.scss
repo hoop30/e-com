@@ -1,10 +1,12 @@
-@use './styles/promoBanner';
-@use './styles/content';
-@use './styles/contentProducts';
-@use './styles/contentMap';
-@use './styles/contentPromo';
-@use './styles/contentService';
-@use './styles/contentBrand';
+@use './styles/content/content';
+@use './styles/content/contentBrand';
+@use './styles/content/contentMap';
+@use './styles/content/contentProducts';
+@use './styles/content/contentProductSlide';
+@use './styles/content/contentPromo';
+@use './styles/content/contentService';
+@use './styles/promoBanner/promoBanner';
+
 
 @import '../../styles/mixin';
 
@@ -17,7 +19,7 @@
     "bottom";
     justify-items: center;
 
-    &>.promoBanner {
+    &>.promo-banner {
         grid-area: top;
     }
 

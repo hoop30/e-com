@@ -1,5 +1,5 @@
 import React from 'react'
-import { Loading } from '../../../utils/Loading'
+import { Loading } from '../../../layout/Loading'
 import { ProductBox } from './ProductBox'
 
 export function Products({ location, products }) {

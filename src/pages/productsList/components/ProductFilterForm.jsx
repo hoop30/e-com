@@ -9,7 +9,7 @@ export function ProductFilterForm() {
     const [rangeValue, setRangeValue] = useState('100')
     const [formPrice, setFormPrice] = useState(false)
     const [btnFormPriceStyle, setBtnFormPriceStyle] = useState('formBtn-price')
-    const [inputFormPriceStyle, setInputFormPriceStyle] = useState('formInput-price')
+    const [inputFormPriceStyle, setInputFormPriceStyle] = useState('form-input-price')
 
     
     function openForm(e) {
@@ -18,10 +18,10 @@ export function ProductFilterForm() {
         
         if (formPrice) {
             setBtnFormPriceStyle('formBtn-price open')
-            setInputFormPriceStyle('formInput-price open')
+            setInputFormPriceStyle('form-input-price open')
         } else {
             setBtnFormPriceStyle('formBtn-price') 
-            setInputFormPriceStyle('formInput-price')
+            setInputFormPriceStyle('form-input-price')
         }
     }
     
@@ -39,7 +39,7 @@ export function ProductFilterForm() {
 
 
     return (
-        <form action="filter" className='productFilterForm'>
+        <form action="filter" className='product-filter-form'>
             <h2>FILTRER LES PRODUITS :</h2>
             <div className='form form-search'>
                 <label htmlFor="designation">CHERCHER UNE RÉFÉRENCE</label>

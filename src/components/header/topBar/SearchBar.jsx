@@ -6,12 +6,12 @@ export function SearchBar() {
     
     const [search, setSearch] = useState('search')
 
-    ScrollListener(setSearch, '', 'search searchSticky')
+    ScrollListener(setSearch, '', 'search search-sticky')
 
     return (
         <form className={search}>
-            <input className="searchForm" type="search" aria-label="Search" placeholder="Rechercher" />
-            <button className='searchBtn'>
+            <input className="search-form" type="search" aria-label="Search" placeholder="Rechercher" />
+            <button className='search-btn'>
                 <IoSearchOutline size="3em" color='grey' id='searchBtn' />
             </button>
         </form>

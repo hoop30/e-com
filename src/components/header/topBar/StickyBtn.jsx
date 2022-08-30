@@ -5,12 +5,12 @@ import { MenuHiddenContext } from '../../../context/MenuHiddenContext'
 
 export function StickyBtn() {
     
-    const [stickyBtnhidden, setStickyBtnhidden] = useState('stickyBtnhidden hidden')
-    let stickyBtn = "stickyBtn"
+    const [stickyBtnhidden, setStickyBtnhidden] = useState('sticky-btn hidden')
+    let stickyBtn = "sticky-btn-line"
     const { MenuHidden ,toggle } = useContext(MenuHiddenContext)
-    MenuHidden !== 'menu' ? stickyBtn = "stickyBtn" : stickyBtn = "stickyBtn active"
+    MenuHidden !== 'menu' ? stickyBtn = "sticky-btn-line" : stickyBtn = "sticky-btn-line active"
 
-    ScrollListener(setStickyBtnhidden, 'stickyBtnhidden hidden', 'stickyBtnhidden')
+    ScrollListener(setStickyBtnhidden, 'sticky-btn hidden', 'sticky-btn')
 
     return (
         <React.Fragment>

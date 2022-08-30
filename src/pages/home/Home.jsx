@@ -1,5 +1,5 @@
 import React from 'react'
-import { PromoBanner } from './components/PromoBanner/PromoBanner'
+import { PromoBanner } from './components/promoBanner/PromoBanner'
 import { Content } from './components/content/Content'
 
 export function Home() {

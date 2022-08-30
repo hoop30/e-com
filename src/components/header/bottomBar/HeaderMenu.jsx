@@ -9,7 +9,7 @@ export function HeaderMenu() {
     const {setMenu, unSetMenu} = useContext(MenuHiddenContext)
 
     return (
-        <ul className='headerMenu'>
+        <ul className='header-menu'>
             <li onMouseEnter={setMenu} onMouseLeave={unSetMenu}>
                 <button aria-current="page" href="index.css">
                     TOUS NOS PRODUITS

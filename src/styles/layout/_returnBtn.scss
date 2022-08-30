@@ -1,6 +1,6 @@
 @import '../mixin';
 
-.return-btn {
+.breadcrumb-return-btn {
     width: 90px;
     padding: 5px 10px 5px 5px;
 
@@ -10,7 +10,7 @@
     }
 }
 
-.mobile-btn {
+.breadcrumb-mobile-btn {
     @include flex-center(space-between, center);
     font-size: 0.95em;
     color: var(--main);
@@ -24,7 +24,7 @@
     }
 }
 
-.desktop-btn {
+.breadcrumb-desktop-btn {
     display: none;
 
     @media screen and (min-width: 1024px) {

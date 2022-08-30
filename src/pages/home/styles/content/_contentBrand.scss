@@ -1,6 +1,6 @@
-@import '../../../styles/mixin';
+@import '../../../../styles/mixin';
 
-.contentBrand {
+.content-brand {
     background: var(--grey);
     display: none;
     position: relative;
@@ -13,7 +13,7 @@
         right: 20px;
     }
 
-    &>ul {
+    &>.brands {
         @include flex-center(center, center);
         padding-top: 30px;
         padding-bottom: 30px;

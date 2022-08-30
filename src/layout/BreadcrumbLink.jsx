@@ -7,7 +7,7 @@ export function BreadcrumbLink({ to, category }) {
     
     if (category !== '') {
         return (
-            <Link to={to} className='breadcrumbLink'>
+            <Link to={to} className='breadcrumb-link'>
                 <p>{category}</p>
                 <IoIosArrowForward  size='0.8em'/>
             </Link>

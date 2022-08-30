@@ -67,7 +67,7 @@ export function TopVente({ location, categorys, products }) {
     }
     
     return (
-        <div className='topVente'>
+        <div className='top-vente'>
             <h2>TOP DES VENTES {category.toUpperCase()} :</h2>
             <Slide {...properties}>
                 <div className="each-slide">

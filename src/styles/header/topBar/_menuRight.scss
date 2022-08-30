@@ -1,10 +1,10 @@
 @import '../../mixin';
 
-.menuRight {
+.menu-right {
     @include flex-center(none,none);
     height: 100%;
 
-    & > .menuRightLogo {
+    & > .menu-right-logo {
         padding: 5px 8px;
         border-left: solid 1px var(--white75);
         cursor: pointer;
@@ -42,7 +42,7 @@
                 font-size: 0.7em;
             }
             
-            &.menuRightSticky>p {
+            &.menu-right-sticky>p {
                 display: none;
             }
         }

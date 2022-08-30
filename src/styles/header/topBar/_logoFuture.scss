@@ -1,6 +1,6 @@
 @import '../../mixin';
 
-.logoFuture {
+.logo-future {
     padding: 5px;
     padding-left: 10px;
     height: 100%;
@@ -18,7 +18,7 @@
     @media screen and (min-width: 1024px) {
         border: none;
         
-        &.logoSticky {
+        &.logo-sticky {
             transition: none;
             height: 50px;
         }

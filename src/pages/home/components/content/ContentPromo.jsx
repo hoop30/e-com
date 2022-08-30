@@ -4,7 +4,7 @@ import { IoIosArrowForward } from 'react-icons/io'
 
 export function ContentPromo() {
     return (
-        <div className='contentPromo'>
+        <div className='content-promo'>
             <h2>DESTOCKAGE :</h2>
             <img src={destockTitle} alt="" />
             <p>Occasion, retours, finde serie...</p>

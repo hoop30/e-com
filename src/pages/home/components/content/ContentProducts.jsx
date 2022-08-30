@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { FormatPrice } from '../../../../utils/FormatPrice'
-import { FetchProducts } from '../../../../utils/FetchProducts'
-import { Loading } from '../../../../utils/Loading'
+import { FetchProducts } from '../../../../lib/FetchProducts'
+import { Loading } from '../../../../layout/Loading'
 
 
 
@@ -19,14 +19,14 @@ export function ContentProducts({ number }) {
         const price = products[number].price.raw
 
         return (
-            <div className='productSlide'>
-                <div className='productBox'>
-                    <a href='index.html' className='productBoxphoto'>
+            <div className='product-slide'>
+                <div className='product-box'>
+                    <a href='index.html' className='product-box-photo'>
                         <img src={image} alt="" />
                     </a>
-                    <a href='index.html' className='productName'>{name}</a>
+                    <a href='index.html' className='product-name'>{name}</a>
                     <div className='price'>
-                        <FormatPrice className='productPrice' price={price} />
+                        <FormatPrice className='product-price' price={price} />
                         <button>
                             <MdOutlineAddShoppingCart size="2em" />
                         </button>
@@ -37,8 +37,8 @@ export function ContentProducts({ number }) {
 
     } else {
         return (
-            <div className='productSlide'>
-                <div className='productBox'>
+            <div className='product-slide'>
+                <div className='product-box'>
                     <Loading />
                 </div>
             </div>

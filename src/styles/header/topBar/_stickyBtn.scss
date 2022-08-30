@@ -1,6 +1,6 @@
 @import '../../mixin';
 
-.stickyBtnhidden {
+.sticky-btn {
     height: 100%;
     width: 45px;
     border: none;
@@ -13,7 +13,7 @@
         display: none;
     }
 
-    &>.stickyBtn {
+    &>.sticky-btn-line {
         margin: 5px 8px;
         height: 20px;
         width: 20px;
@@ -55,7 +55,7 @@
     transition: transform 0.3s ease-out, opacity 0.1s ease-out;
 }
 
-.stickyBtn.active {
+.sticky-btn-line.active {
     justify-content: center;
 
     &>.l1 {
@@ -68,12 +68,5 @@
 
     &>.l3 {
        opacity: 0; 
-    }
-}
-
-.productsMenu {
-
-    &.hidden {
-        display: none;
     }
 }

@@ -39,7 +39,7 @@ const properties = {
 export const ContentProductSlide = () => {
     
     return (
-        <div className="ContentProducts">
+        <div className="Content-products">
             <h2>PRODUITS</h2>
             <div className="slide-container">
                 <Slide {...properties}>

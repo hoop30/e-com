@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Breadcrumb } from '../../utils/Breadcrumb'
+import { Breadcrumb } from '../../layout/Breadcrumb'
 import { ProductLayout } from './components/ProductLayout'
 import { useLocation } from 'react-router-dom'
-import { FetchProducts } from '../../utils/FetchProducts'
+import { FetchProducts } from '../../lib/FetchProducts'
 
 
 export function Product() {

@@ -4,7 +4,7 @@ import { IoIosArrowForward } from 'react-icons/io'
 
 export function ContentMap() {
     return (
-        <div className='contentMap'>
+        <div className='content-map'>
             <h2>FUTURE PRÈS DE CHEZ VOUS:</h2>
             <img src={map} alt="" />
             <p>Coordonnées, plan d'accès, horraire d'ouvertures...</p>

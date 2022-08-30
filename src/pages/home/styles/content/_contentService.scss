@@ -1,6 +1,6 @@
-@import '../../../styles/mixin';
+@import '../../../../styles/mixin';
 
-.contentService {
+.content-service {
     background: var(--grey);
     @include flex-center(none, center, column);
 

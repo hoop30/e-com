@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 export function LogoFuture() {
 
-    const [logoFuture, setLogoFuture] = useState('logoFuture')
+    const [logoFuture, setLogoFuture] = useState('logo-future')
 
-    ScrollListener(setLogoFuture, "logoFuture", "logoFuture logoSticky")
+    ScrollListener(setLogoFuture, "logo-future", "logo-future logo-sticky")
 
     return (
         <Link to="/" className={logoFuture}>

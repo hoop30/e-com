@@ -1,9 +1,9 @@
-@use './topNav/topBar';
-@use './topNav/logoFuture';
-@use './topNav/stickyBtn';
-@use './topNav/searchBar';
-@use './topNav/menuRight';
-@use './bottomNav/headerMenu';
+@use './topBar/topBar';
+@use './topBar/logoFuture';
+@use './topBar/stickyBtn';
+@use './topBar/searchBar';
+@use './topBar/menuRight';
+@use './bottomBar/headerMenu';
 @use './menu/desktopMenuList';
 @use './menu/categoryList';
 @use './menu/subCategoryList';
@@ -70,7 +70,7 @@
         -webkit-box-shadow: 0px -5px 4px 5px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 0px -5px 4px 5px rgba(0, 0, 0, 0.75);
 
-        &.headerSticky {
+        &.header-sticky {
             position: sticky;
             top: 0;
 

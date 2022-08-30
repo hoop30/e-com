@@ -69,10 +69,10 @@ export function Breadcrumb({ location, categorys, products }) {
     }
 
     return (
-        <div className='pl-breadcrumb'>
+        <div className='breadcrumb'>
             <ReturnBtn />
             {links}
-            <div className="location">
+            <div className="breadcrumb-location">
                 {currentLocation}
             </div>
         </div>

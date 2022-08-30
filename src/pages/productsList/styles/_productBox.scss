@@ -1,7 +1,7 @@
 @import '../../../styles/mixin';
 
 
-.productBox {
+.productList-box {
     @include flex-center(none, none);
     border-top: solid 1px var(--grey);
     padding: 15px 10px;

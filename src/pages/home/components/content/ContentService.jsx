@@ -4,7 +4,7 @@ import { IoIosArrowForward } from 'react-icons/io'
 
 export function ContentService() {
     return (
-        <div className='contentService'>
+        <div className='content-service'>
             <h2>CONFIGURATEUR PC :</h2>
             <a href="index.html">
                 <div>

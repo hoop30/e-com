@@ -1,25 +1,10 @@
-@import '../../../styles//mixin';
-
-.ContentProducts {
-    background: var(--grey);
-    @include flex-center(center,none,column);
-    padding-top: 30px;
-    padding-bottom: 30px;
-    border-bottom: solid 1px var(--greydark);
-    height: 458px;
-
-    &>h2 {
-        align-self: center;
-        color: var(--greydark);
-        padding-bottom: 35px;
-    }
-}
+@import '../../../../styles//mixin';
 
 .content-slide {
     @include flex-center(center, center);
 }
 
-.productSlide {
+.product-slide {
     width: 100%;
     display: grid;
     grid-template-columns: 20% 60% 20%;
@@ -32,15 +17,15 @@
         align-items: center;
         justify-content: center;
     }
-    &>.arrowLeft {
+    &>.arrow-left {
         grid-area: arrowLeft;
     }
 
-    &>.arrowRight {
+    &>.arrow-right {
         grid-area: arrowRight;
     }
 
-    &>.arrowLeft, .arrowRight {
+    &>.arrow-left, .arrow-right {
 
         &>.arrow {
             color: var(--greydark);
@@ -51,11 +36,11 @@
         }
     }
     
-    &>.productBox {
+    &>.product-box {
         width: 100%;
         grid-area: content;
 
-        &>.productBoxphoto {
+        &>.product-box-photo {
             width: 200px;
             height: 215px;
             display: flex;
@@ -68,7 +53,7 @@
             }
         }
 
-        &>.productName {
+        &>.product-name {
             color: var(--greydark);
             font-size: 0.9em;
             width: 80%;
@@ -85,7 +70,7 @@
             justify-content: space-between;
             align-items: center;
 
-            &>.productPrice {
+            &>.product-price {
                 font-weight: 600;
                 color: var(--dark);
             }

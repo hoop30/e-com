@@ -1,7 +1,7 @@
 import React from 'react'
 import { FormatPrice } from '../../../utils/FormatPrice'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
-import { Loading } from '../../../utils/Loading'
+import { Loading } from '../../../layout/Loading'
 
 export function ProductDiv({ subProduct, number }) {
 
@@ -12,14 +12,14 @@ export function ProductDiv({ subProduct, number }) {
             const price = subProduct[number].price.raw
 
             return (
-                <div className='productSlide'>
-                    <div className='productBox'>
-                        <a href='index.html' className='productBoxphoto'>
+                <div className='product-slide'>
+                    <div className='product-box'>
+                        <a href='index.html' className='product-box-photo'>
                             <img src={image} alt="" />
                         </a>
-                        <a href='index.html' className='productName'>{name}</a>
+                        <a href='index.html' className='product-name'>{name}</a>
                         <div className='price'>
-                            <FormatPrice className='productPrice' price={price} />
+                            <FormatPrice className='product-price' price={price} />
                             <button>
                                 <MdOutlineAddShoppingCart size="2em" />
                             </button>
@@ -30,8 +30,8 @@ export function ProductDiv({ subProduct, number }) {
         }
     } else {
         return (
-            <div className='productSlide'>
-                <div className='productBox'>
+            <div className='product-slide'>
+                <div className='product-box'>
                     <Loading />
                 </div>
             </div>

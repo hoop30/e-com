@@ -8,9 +8,9 @@ import { BsCreditCard } from 'react-icons/bs'
 
 export function FooterInfo() {
     return (
-        <div className='footerInfo'>
-            <div className="footerTopGrid">
-                <ul className='footerWho'>
+        <div className='footer-info'>
+            <div className="footer-top-grid">
+                <ul className='footer-who'>
                     <li>
                         <h2>QUI SOMMES NOUS ?</h2>
                         <span></span>
@@ -21,7 +21,7 @@ export function FooterInfo() {
                     <li><a href="index.html">Gérer mes cookies</a></li>
                     <li><a href="index.html">Mentions légales</a></li>
                 </ul>
-                <ul className='footerJoin'>
+                <ul className='footer-join'>
                     <li>
                         <h2>NOUS REJOINDRE :</h2>
                         <span></span>
@@ -31,7 +31,7 @@ export function FooterInfo() {
                     <li><a href="index.html">l'École LDLC</a></li>
                     <li><a href="index.html">Marketplace</a></li>
                 </ul>
-                <ul className='footerHelp'>
+                <ul className='footer-help'>
                     <li>
                         <h2>BESOIN D'AIDE ?</h2>
                         <span></span>
@@ -42,25 +42,25 @@ export function FooterInfo() {
                     <li><a href="index.html">Garanties et Pack Confort</a></li>
                     <li><a href="index.html">Demander un retour</a></li>
                 </ul>
-                <div className='footerContact'>
-                    <ul className='contactGrid'>
-                        <li className='liTitle'>
+                <div className='footer-contact'>
+                    <ul className='footer-contact-layout'>
+                        <li className='li-title'>
                             <h2>NOUS CONTACTER :</h2>
                             <span></span>
                         </li>
-                        <li className='liImg'>
+                        <li className='li-img'>
                             <img src={serviceClient} alt="" />
                         </li>
-                        <li className='liEmail'>
+                        <li className='li-email'>
                             <a href="index.html">PAR EMAIL</a>
                         </li>
-                        <li className='liBva'>
+                        <li className='li-bva'>
                             <p>*Étude BVA – Viséo CI – Plus d’infos sur escda.fr</p>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div className="footerBottomGrid">
+            <div className="footer-bottom-layout">
                 <div>
                     <GiCardboardBoxClosed size="3.5em"/>
                     <h2>Débit à l'expédition</h2>

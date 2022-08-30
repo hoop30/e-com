@@ -6,7 +6,7 @@ import { FooterLogo } from './FooterLogo'
 export function Footer() {
     return (
         <footer>
-            <div className='footerGrid'>
+            <div className='footer-layout'>
                 <FooterThanks />
                 <FooterInfo />
                 <FooterLogo />

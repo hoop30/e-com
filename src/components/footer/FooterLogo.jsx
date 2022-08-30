@@ -5,7 +5,7 @@ import gptw from '../../assets/img/gptw.png'
 export function FooterLogo() {
     return (
         <React.Fragment>
-            <div className='footerLogo'>
+            <div className='footer-country'>
                 <img src={logo} alt="" width="50px" height="50px" />
                 <ul>
                     <li>France</li>
@@ -16,7 +16,7 @@ export function FooterLogo() {
                     <li>Italie</li>
                     <li>International (Anglais)</li>
                 </ul>
-            <div className='footerLogoLeft'>
+            <div className='footer-country-left'>
                 <img src={gptw} alt="" width="67px" height="114px"/>
             </div>
             </div>

@@ -1,0 +1,16 @@
+@import '../../../../styles//mixin';
+
+.Content-products {
+    background: var(--grey);
+    @include flex-center(center,none,column);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: solid 1px var(--greydark);
+    height: 458px;
+
+    &>h2 {
+        align-self: center;
+        color: var(--greydark);
+        padding-bottom: 35px;
+    }
+}

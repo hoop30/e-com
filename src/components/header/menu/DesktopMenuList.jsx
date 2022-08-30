@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import { CategoryList } from './CategoryList'
 import { SubCategoryList } from './SubCategoryList'
 import { MenuHiddenContext } from '../../../context/MenuHiddenContext'
-import { FetchCategorys } from '../../../utils/FetchCategorys'
+import { FetchCategorys } from '../../../lib/FetchCategorys'
 
 export function DesktopMenuList({ subList, setSublist, resetSubList}) {
     const { MenuHidden, setMenu, unSetMenu } = useContext(MenuHiddenContext)
@@ -31,12 +31,12 @@ export function DesktopMenuList({ subList, setSublist, resetSubList}) {
     
     return (
             <div className="desktop-menu">
-                <div className='CategoryListBox'>
-                    <ul className='CategoryList' onMouseEnter={setMenu} onMouseLeave={unSetMenu}>
+                <div className='category-list-box'>
+                    <ul className='category-list' onMouseEnter={setMenu} onMouseLeave={unSetMenu}>
                         <CategoryList categorys={categorys} onSetSubCategorys={onSetSubCategorys} />
                     </ul>
                 </div>
-                <ul className='SubCategoryList' onMouseEnter={setMenu} onMouseLeave={unSetMenu}>
+                <ul className='sub-category-list' onMouseEnter={setMenu} onMouseLeave={unSetMenu}>
                     <SubCategoryList categorys={categorys} subcategorys={subcategorys} onresetSubList={resetSubList} />
                 </ul>
             </div>

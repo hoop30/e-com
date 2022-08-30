@@ -1,6 +1,6 @@
 @import '../mixin';
 
-.footerInfo {
+.footer-info {
     border-bottom: solid 1px var(--white75);
 
     @media screen and (min-width: 990px) {
@@ -12,7 +12,7 @@
     }
 }
 
-.footerTopGrid {
+.footer-top-grid {
     max-width: 1210px;
     padding: 30px 20px 65px 20px;
     grid-area: footerTopGrid;
@@ -69,19 +69,19 @@
             "who join"
             "help contact";
 
-        &>.footerInfo {
+        &>.footer-who {
             grid-area: who;
         }
 
-        &>.footerJoin {
+        &>.footer-join {
             grid-area: join;
         }
 
-        &>.footerHelp {
+        &>.footer-help {
             grid-area: help;
         }
 
-        &>.footerContact {
+        &>.footer-contact {
             grid-area: contact;
         }
     }
@@ -103,9 +103,9 @@
     }
 }
 
-.footerContact {
+.footer-contact {
 
-    &>.contactGrid {
+    &>.footer-contact-layout {
         display: grid;
         grid-template-rows: auto auto auto;
         justify-content: center;
@@ -157,20 +157,20 @@
                 "liImg liEmail"
                 "liBva liBva";
 
-            &>.liImg {
+            &>.li-img {
                 grid-area: liImg;
             }
 
-            &>.liTitle {
+            &>.li-title {
                 grid-area: liTitle;
             }
 
-            &>.liEmail {
+            &>.li-email {
                 grid-area: liEmail;
                 justify-content: flex-start;
             }
 
-            &>.liBva {
+            &>.li-bva {
                 grid-area: liBva;
                 text-align: center;
             }
@@ -178,7 +178,7 @@
 
         @media screen and (min-width: 1024px) {
 
-            &>.liTitle {
+            &>.li-title {
                 @include flex-center(none, flex-start, column);
 
                 &>span {
@@ -190,7 +190,7 @@
                 }
             }
 
-            &>.liImg>img {
+            &>.li-img>img {
                 width: auto;
                 height: 100px;
             }
@@ -198,7 +198,7 @@
     }
 }
 
-.footerBottomGrid {
+.footer-bottom-layout {
     max-width: 1210px;
     display: none;
     

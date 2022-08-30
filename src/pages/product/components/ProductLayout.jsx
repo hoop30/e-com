@@ -37,7 +37,7 @@ export function ProductLayout({ location, products }) {
 
 
         return (
-            <div className='ProductLayout-box'>
+            <div className='Product-layout-box'>
                 <h2>{name}</h2>
                 <img src={image} alt="" width="300px" height="300px" />
                 <div className="price-stock">

@@ -10,7 +10,7 @@ export function Header() {
     const { MenuHidden } = useContext(MenuHiddenContext)
     const [headerStyle, setHeaderStyle] = useState('nav-bar')
 
-    ScrollListener(setHeaderStyle, 'nav-bar', 'nav-bar headerSticky')
+    ScrollListener(setHeaderStyle, 'nav-bar', 'nav-bar header-sticky')
 
     return (
         <header className={headerStyle}>

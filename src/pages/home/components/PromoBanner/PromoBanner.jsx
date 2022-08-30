@@ -32,21 +32,21 @@ export function PromoBanner() {
     }
 
     return (
-        <div className='promoBanner'>
+        <div className='promo-banner'>
             <Slide {...properties}>
-                <div className="each-slide" id='PromoSlide' >
-                    <img src={imgPromo50} alt="" className='' />
+                <div className="each-slide">
+                    <img src={imgPromo50} alt="" />
                 </div>
-                <div className="each-slide" id='PromoSlide2'>
+                <div className="each-slide">
                     <img src={imgPromoBFS} alt="" />
                 </div>
-                <div className="each-slide" id='PromoSlide'>
+                <div className="each-slide">
                     <img src={imgPromoBlackFriday} alt="" />
                 </div>
-                <div className="each-slide" id='PromoSlide'>
+                <div className="each-slide">
                     <img src={imgPromoOpen} alt="" />
                 </div>
-                <div className="each-slide" id='PromoSlide'>
+                <div className="each-slide">
                     <img src={imgPromoProducts} alt="" />
                 </div>
             </Slide>

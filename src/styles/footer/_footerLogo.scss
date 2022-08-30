@@ -1,12 +1,11 @@
 @import '../mixin';
 
-.footerLogo {
+.footer-country {
     width: 100%;
     padding: 35px 0;
     border-bottom: solid 1px var(--white75);
     position: relative;
     @include flex-center(center, center, column);
-
 
     &>img {
         width: 50px;
@@ -27,7 +26,7 @@
     }
 }
 
-.footerLogoLeft {
+.footer-country-left {
     position: absolute;
     right: 0;
 

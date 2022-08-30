@@ -2,9 +2,9 @@ import React from 'react'
 import { ProductFilterForm } from './ProductFilterForm'
 
 export function ProductFilterBox({isShowing}) {
-    let formProductsFilterClass = 'productFilterBox'
+    let formProductsFilterClass = 'product-filter-box'
 
-    isShowing ? formProductsFilterClass = 'productFilterBox fadein' : formProductsFilterClass = 'productFilterBox fadeout'
+    isShowing ? formProductsFilterClass = 'product-filter-box fadein' : formProductsFilterClass = 'product-filter-box fadeout'
     
     return (
         <div className={formProductsFilterClass}>

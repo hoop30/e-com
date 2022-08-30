@@ -8,7 +8,7 @@ import link from '../../../../assets/img/brands/d-link.gif';
 
 export function ContentBrand() {
     return (
-        <div className='contentBrand'>
+        <div className='content-brand'>
             <button className='btn'>VOIR +</button>
             <h2>NOS SHOPS DE MARQUES</h2>
             <ul className='brands'>

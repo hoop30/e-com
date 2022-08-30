@@ -1,5 +1,5 @@
 import React from 'react'
-import { CategorysBox } from './CategorysBox'
+import { CategorysSubBox } from './CategorysSubBox'
 
 export function CategorysSubList({location, categorys}) {
     let subListBox = []
@@ -16,7 +16,7 @@ export function CategorysSubList({location, categorys}) {
                 for (const subCategory in suList) {
                     const name = suList[subCategory].name
                     const photo = suList[subCategory].assets[0].url
-                    const newBox = CategorysBox(name, photo)
+                    const newBox = CategorysSubBox(name, photo)
                     
                     subListBox.push(newBox)
                 }
@@ -25,9 +25,9 @@ export function CategorysSubList({location, categorys}) {
     }
     
     return (
-        <div className='categorys-subList'>
+        <div className='categorys-sub-list'>
             <h2>NOS CATÉGORIES {category.toUpperCase()} :</h2>
-            <div className="categorys-subList-box">
+            <div className="categorys-sub-list-box">
                 {subListBox}
             </div>
         </div>

@@ -5,12 +5,12 @@ import { useLocation } from 'react-router-dom';
 
 export function FooterThanks() {
     let location = useLocation()
-    const [footerThanksHidden, setFooterThanksHidden ] = useState('footerThanks')
+    const [footerThanksHidden, setFooterThanksHidden ] = useState('footer-thanks')
 
-    if (location.pathname !== '/' && footerThanksHidden === 'footerThanks') {
-        setFooterThanksHidden('footerThanks hidden')
-    } else if (location.pathname === '/' && footerThanksHidden === 'footerThanks hidden') {
-        setFooterThanksHidden('footerThanks')
+    if (location.pathname !== '/' && footerThanksHidden === 'footer-thanks') {
+        setFooterThanksHidden('footer-thanks hidden')
+    } else if (location.pathname === '/' && footerThanksHidden === 'footer-thanks hidden') {
+        setFooterThanksHidden('footer-thanks')
     }
 
     return (

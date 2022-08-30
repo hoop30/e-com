@@ -1,6 +1,6 @@
 @import '../../../styles/mixin';
 
-.ProductLayout-box {
+.Product-layout-box {
     @include flex-center(center, center, column);
     padding: 30px 20px;
     background: var(--white);
@@ -95,10 +95,6 @@
             grid-area: desc;
             height: 100%;
             padding: 15px;
-
-            &>p {
-                
-            }
         }
 
         &>.price-stock {

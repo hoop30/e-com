@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 
 export function MenuRight() {
 
-    const [menuRightLogo, setMenuRightLogo] = useState('menuRightLogo')
+    const [menuRightLogo, setMenuRightLogo] = useState('menu-right-logo')
 
-    ScrollListener(setMenuRightLogo, 'menuRightLogo', 'menuRightLogo menuRightSticky')
+    ScrollListener(setMenuRightLogo, 'menu-right-logo', 'menu-right-logo menu-right-sticky')
 
     return (
-        <div className="menuRight">
+        <div className="menu-right">
             <div className={menuRightLogo}>
                 <FiUser size="2.5em" color='#fcfcfc' className='compte' />
                 <p>COMPTE</p>

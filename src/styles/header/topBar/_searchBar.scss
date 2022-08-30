@@ -7,7 +7,7 @@ form {
     grid-template-areas: 
         "searchInput searchBtn";
 
-    &>.searchForm {
+    &>.search-form {
         grid-area: searchInput;
         padding-left: 15px;
         background: var(--white);
@@ -27,7 +27,7 @@ form {
         }
     }
 
-    &>.searchBtn {
+    &>.search-btn {
         height: 90%;
         grid-area: searchBtn;
         background: var(--white);
@@ -56,9 +56,9 @@ form {
     @media screen and (min-width: 1024px) {
         align-items: center;
 
-        &.searchSticky {
+        &.search-sticky {
 
-            &>.searchForm, .searchBtn {
+            &>.search-form, .search-btn {
                 height: 80%;
             }
         }
