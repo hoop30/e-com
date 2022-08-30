@@ -24,27 +24,39 @@ export function MobileMenuList({ categorys, classStyle }) {
 
     // set position
     function liListeset(e) {
-        setLislist(categorys[e.target.name].children)
+        if (e.target.name !== undefined) {
+            setLislist(categorys[e.target.name].children)
+        } else if (e.target.parentNode.name !== undefined) {
+            setLislist(categorys[e.target.parentNode.name].children)
+        } else {
+            setLislist(categorys[e.target.parentNode.parentNode.name].children)
+        }
     }
 
     for (const key in liListe) {
         // to set if under categorys exist
         if (liListe[key].children !== undefined) {
-            const newLi = <li key={liListe[key].name}>
+            const name = liListe[key].name
+            const normCat = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+            const link = `/CategorysList?category=${normCat}`
+
+            const newLi = <li key={name}>
+                <Link to={link}>{name}</Link>
+                <span></span>
                 <button onClick={liListeset} name={key}>
-                    {liListe[key].name}
-                    <BsThreeDots size="2em" color='#ffd1b3' />
+                    <BsThreeDots size="2em" color='#ffd1b3'/>
                 </button>
             </li>
 
             ul.unshift(newLi)
         } else {
-            const normCat = liListe[key].name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-            const toLink = `/ProductsList?category=${normCat}`
+            const name = liListe[key].name
+            const normCat = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+            const link = `/ProductsList?category=${normCat}`
 
-            const newLi = <li key={liListe[key].name}>
-                <Link to={toLink}>
-                    {liListe[key].name}
+            const newLi = <li key={name}>
+                <Link to={link}>
+                    {name}
                 </Link>
             </li>
 

@@ -2,6 +2,7 @@ import React from 'react'
 import { FormatPrice } from '../../../utils/FormatPrice'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { Loading } from '../../../layout/Loading'
+import { Link } from 'react-router-dom'
 
 export function ProductDiv({ subProduct, number }) {
 
@@ -10,14 +11,16 @@ export function ProductDiv({ subProduct, number }) {
             const image = subProduct[number].image.url
             const name = subProduct[number].name
             const price = subProduct[number].price.raw
+            const normName = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+            const link = `/Product?product=${normName}`
 
             return (
                 <div className='product-slide'>
                     <div className='product-box'>
-                        <a href='index.html' className='product-box-photo'>
+                        <Link to={link} className='product-box-photo'>
                             <img src={image} alt="" />
-                        </a>
-                        <a href='index.html' className='product-name'>{name}</a>
+                        </Link>
+                        <Link to={link} className='product-name'>{name}</Link>
                         <div className='price'>
                             <FormatPrice className='product-price' price={price} />
                             <button>

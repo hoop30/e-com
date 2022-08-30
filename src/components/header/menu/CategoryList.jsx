@@ -14,7 +14,6 @@ export function CategoryList({categorys, onSetSubCategorys}) {
         const logo = categorys[key].assets[0].url
         const cat = categorys[key].name
         const normCat = cat.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        //===========
         const toLink = `/CategorysList?category=${normCat}`
 
         const newCategory = <li className={liclass} key={key} name={cat}>

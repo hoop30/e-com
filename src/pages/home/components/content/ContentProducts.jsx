@@ -3,6 +3,7 @@ import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { FormatPrice } from '../../../../utils/FormatPrice'
 import { FetchProducts } from '../../../../lib/FetchProducts'
 import { Loading } from '../../../../layout/Loading'
+import { Link } from 'react-router-dom'
 
 
 
@@ -17,14 +18,16 @@ export function ContentProducts({ number }) {
         const name = products[number].name
         const image = products[number].image.url
         const price = products[number].price.raw
+        const normName = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        const link = `Product?product=${normName}`
 
         return (
             <div className='product-slide'>
                 <div className='product-box'>
-                    <a href='index.html' className='product-box-photo'>
+                    <Link to={link} className='product-box-photo'>
                         <img src={image} alt="" />
-                    </a>
-                    <a href='index.html' className='product-name'>{name}</a>
+                    </Link>
+                    <Link to={link} className='product-name'>{name}</Link>
                     <div className='price'>
                         <FormatPrice className='product-price' price={price} />
                         <button>

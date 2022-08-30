@@ -26,9 +26,9 @@ export function ProductBox({ products, location }) {
                 </Link>
                 <div>
                     <div className="name-stock">
-                        <div className='name'>
+                        <Link className='name' to={link}>
                             <h4>{name}</h4>
-                        </div>
+                        </Link>
                         <Stocks stock={stock}/>
                     </div>
                     <div className="price">
