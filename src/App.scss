@@ -117,3 +117,14 @@ h2 {
     color: var(--greydark);
     padding-bottom: 15px;
 }
+
+.green {
+    color: green;
+    font-weight: 600;
+    width: 50px;
+    text-align: center;
+}
+.greydark {
+    color: var(--greydark);
+    font-weight: 600;
+}

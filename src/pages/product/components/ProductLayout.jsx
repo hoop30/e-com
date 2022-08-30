@@ -20,6 +20,7 @@ export function ProductLayout({ location, products }) {
         const description = currentProduct.description
         const preDescription = description.split('<p>')
         let desc = []
+        let enStock = ''
         
         preDescription.forEach(element => {
             const preDescriptionSplit = element.split('</p>')
@@ -30,6 +31,10 @@ export function ProductLayout({ location, products }) {
             }
         })
         
+        stock > 0 ? 
+            enStock = <p className='green'>EN STOCK</p> 
+            : enStock = <p className='greydark'>RUPTURE</p>
+
         return (
             <div className='Product-layout-box'>
                 <h2>{name}</h2>
@@ -47,7 +52,7 @@ export function ProductLayout({ location, products }) {
                     <div className="stock">
                         <p>DISPO WEB</p>
                         <div className="center">
-                            <p>{stock}</p>
+                            {enStock}
                         </div>
                     </div>
                 </div>

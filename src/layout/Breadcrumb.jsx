@@ -1,6 +1,8 @@
 import React from 'react'
 import { ReturnBtn } from './ReturnBtn'
 import { BreadcrumbLink } from './BreadcrumbLink'
+import { NormLink } from '../utils/NormLink'
+
 
 export function Breadcrumb({ location, categorys, products }) {
 
@@ -29,10 +31,9 @@ export function Breadcrumb({ location, categorys, products }) {
                     // end subCategory
                     if (normChild === loc) {
                         const category = categorys[key].name
-                        const normCat = category.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-                        const link = `/CategorysList?category=${normCat}`
+                        const link = NormLink('CategorysList', category)
 
-                        const newLink = <BreadcrumbLink to={link} category={category} />
+                        const newLink = <BreadcrumbLink to={link} category={category} key={category}/>
 
                         links.push(newLink)
                         currentLocation = child.name
@@ -50,18 +51,17 @@ export function Breadcrumb({ location, categorys, products }) {
 
                 // push category Lynk
                 const category = product.categories[1].name
-                const normCat = category.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-                const link = `/CategorysList?category=${normCat}`
+                const link = NormLink('CategorysList', category)
 
-                const newLink = <BreadcrumbLink to={link} category={category} key='1'/>
+                const newLink = <BreadcrumbLink to={link} category={category} key='category'/>
 
                 links.push(newLink)
 
                 // push subCategory Lynk
                 const subCategory = product.categories[0].name
-                const normSubCat = subCategory.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-                const Sublink = `/ProductsList?category=${normSubCat}`
-                const newSubLink = <BreadcrumbLink to={Sublink} category={subCategory} key='2'/>
+                const sublink = NormLink('ProductsList', subCategory)
+
+                const newSubLink = <BreadcrumbLink to={sublink} category={subCategory} key='subCategory'/>
 
                 links.push(newSubLink)
             }

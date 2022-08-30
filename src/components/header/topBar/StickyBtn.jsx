@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { ScrollListener } from '../../../utils/ScrollListener'
 import { useContext } from 'react'
-import { MenuHiddenContext } from '../../../context/MenuHiddenContext'
+import { DescktopMenuContext } from '../../../context/DescktopMenuContext'
 
 export function StickyBtn() {
     
     const [stickyBtnhidden, setStickyBtnhidden] = useState('sticky-btn hidden')
     let stickyBtn = "sticky-btn-line"
-    const { MenuHidden ,toggle } = useContext(MenuHiddenContext)
-    MenuHidden !== 'menu' ? stickyBtn = "sticky-btn-line" : stickyBtn = "sticky-btn-line active"
+    const { descktopMenu ,toggle } = useContext(DescktopMenuContext)
+    descktopMenu !== 'menu' ? stickyBtn = "sticky-btn-line" : stickyBtn = "sticky-btn-line active"
 
     ScrollListener(setStickyBtnhidden, 'sticky-btn hidden', 'sticky-btn')
 

@@ -1,11 +1,12 @@
 import React from 'react'
 import { IoIosArrowDown } from 'react-icons/io'
 import { Link } from 'react-router-dom'
+import { NormLink } from '../../../utils/NormLink'
+
 
 export function CategorysSubBox(name, photo) {
 
-    const normName = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    const link = `/ProductsList?category=${normName}`
+    const link = NormLink('ProductsList', name)
 
     return (
         <div className='categorys-sub-Box' key={name}>

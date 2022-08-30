@@ -4,7 +4,7 @@ import { FormatPrice } from '../../../../utils/FormatPrice'
 import { FetchProducts } from '../../../../lib/FetchProducts'
 import { Loading } from '../../../../layout/Loading'
 import { Link } from 'react-router-dom'
-
+import { NormLink } from '../../../../utils/NormLink'
 
 
 export function ContentProducts({ number }) {
@@ -18,8 +18,7 @@ export function ContentProducts({ number }) {
         const name = products[number].name
         const image = products[number].image.url
         const price = products[number].price.raw
-        const normName = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        const link = `Product?product=${normName}`
+        const link = NormLink('Product', name)
 
         return (
             <div className='product-slide'>

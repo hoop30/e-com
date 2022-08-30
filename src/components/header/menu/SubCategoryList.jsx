@@ -1,16 +1,16 @@
 import React from 'react'
 import { Link } from "react-router-dom"
+import { NormLink } from '../../../utils/NormLink'
 
 
-export function SubCategoryList({ subcategorys }) {
+export function SubCategoryList({ subcategorys, unSetMenu }) {
     let subCategoryLi = []
 
     subcategorys.forEach(subcategory => {
-        const normCat = subcategory.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        const toLink = `/ProductsList?category=${normCat}`
+        const link = NormLink('ProductsList', subcategory.name)
         
-        const newSubCategory = <li key={subcategory.name}>
-            <Link to={toLink}>{subcategory.name}</Link>
+        const newSubCategory = <li key={subcategory.name} onClick={unSetMenu}>
+            <Link to={link}>{subcategory.name}</Link>
         </li>
     
         subCategoryLi.push(newSubCategory)

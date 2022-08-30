@@ -3,6 +3,8 @@ import { FormatPrice } from '../../../utils/FormatPrice'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { Loading } from '../../../layout/Loading'
 import { Link } from 'react-router-dom'
+import { NormLink } from '../../../utils/NormLink'
+
 
 export function ProductDiv({ subProduct, number }) {
 
@@ -11,8 +13,7 @@ export function ProductDiv({ subProduct, number }) {
             const image = subProduct[number].image.url
             const name = subProduct[number].name
             const price = subProduct[number].price.raw
-            const normName = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-            const link = `/Product?product=${normName}`
+            const link = NormLink('Product', name)
 
             return (
                 <div className='product-slide'>

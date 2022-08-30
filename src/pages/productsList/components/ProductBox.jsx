@@ -3,6 +3,8 @@ import { FormatPrice } from '../../../utils/FormatPrice'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { Stocks } from './Stock'
 import { Link } from 'react-router-dom'
+import { NormLink } from '../../../utils/NormLink'
+
 
 export function ProductBox({ products, location }) {
 
@@ -18,7 +20,7 @@ export function ProductBox({ products, location }) {
             const name = product.name
             const stock = product.inventory.available
             const price = product.price.raw
-            const link = `/Product?product=${name}`
+            const link = NormLink('Product', name)
 
             const newProduct = <div className='productList-box' key={name}>
                 <Link className="image center" to={link}>

@@ -1,12 +1,12 @@
 import React from 'react'
 import { RiArrowDropDownLine, RiPercentLine, RiContactsLine, RiQuestionMark } from "react-icons/ri";
 import { useContext } from 'react'
-import { MenuHiddenContext } from '../../../context/MenuHiddenContext'
+import { DescktopMenuContext } from '../../../context/DescktopMenuContext'
 
 
 export function HeaderMenu() {
 
-    const {setMenu, unSetMenu} = useContext(MenuHiddenContext)
+    const {setMenu, unSetMenu} = useContext(DescktopMenuContext)
 
     return (
         <ul className='header-menu'>

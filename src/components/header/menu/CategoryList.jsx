@@ -1,9 +1,10 @@
 import React from 'react'
 import { IoIosArrowForward } from "react-icons/io"
 import { Link } from "react-router-dom"
+import { NormLink } from '../../../utils/NormLink'
 
 
-export function CategoryList({categorys, onSetSubCategorys}) {
+export function CategoryList({categorys, onSetSubCategorys, unSetMenu}) {
 
     let licategory = []
     
@@ -13,11 +14,10 @@ export function CategoryList({categorys, onSetSubCategorys}) {
         key === 0 ? liclass = "active" : liclass = ""
         const logo = categorys[key].assets[0].url
         const cat = categorys[key].name
-        const normCat = cat.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        const toLink = `/CategorysList?category=${normCat}`
+        const link = NormLink('CategorysList', cat)
 
         const newCategory = <li className={liclass} key={key} name={cat}>
-            <Link to={toLink} onMouseEnter={onSetSubCategorys} name={cat}>
+            <Link to={link} onMouseEnter={onSetSubCategorys} name={cat} onClick={unSetMenu}>
                 <div>
                     <img src={logo} alt="" width="30px" height="30px" name={cat}/>
                     <p>{cat}</p>

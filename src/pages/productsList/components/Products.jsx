@@ -2,6 +2,7 @@ import React from 'react'
 import { Loading } from '../../../layout/Loading'
 import { ProductBox } from './ProductBox'
 
+
 export function Products({ location, products }) {
     let count = 0
     if (products !== undefined) {

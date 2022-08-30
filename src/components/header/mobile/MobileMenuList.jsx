@@ -2,8 +2,10 @@ import { useState } from 'react'
 import { BsThreeDots } from 'react-icons/bs'
 import { IoIosArrowBack } from 'react-icons/io'
 import { Link } from 'react-router-dom'
+import { NormLink } from '../../../utils/NormLink'
 
-export function MobileMenuList({ categorys, classStyle }) {
+
+export function MobileMenuList({ categorys, classStyle, onclick }) {
 
     let ul = []
     const [liListe, setLislist] = useState()
@@ -37,11 +39,12 @@ export function MobileMenuList({ categorys, classStyle }) {
         // to set if under categorys exist
         if (liListe[key].children !== undefined) {
             const name = liListe[key].name
-            const normCat = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-            const link = `/CategorysList?category=${normCat}`
+            const link = NormLink('CategorysList', name)
 
             const newLi = <li key={name}>
-                <Link to={link}>{name}</Link>
+                <Link to={link}  onClick={onclick}>
+                    {name}
+                </Link>
                 <span></span>
                 <button onClick={liListeset} name={key}>
                     <BsThreeDots size="2em" color='#ffd1b3'/>
@@ -55,7 +58,7 @@ export function MobileMenuList({ categorys, classStyle }) {
             const link = `/ProductsList?category=${normCat}`
 
             const newLi = <li key={name}>
-                <Link to={link}>
+                <Link to={link} onClick={onclick}>
                     {name}
                 </Link>
             </li>
