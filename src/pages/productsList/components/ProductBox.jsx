@@ -21,7 +21,7 @@ export function ProductBox({ products, location }) {
             const link = `/Product?product=${name}`
 
             const newProduct = <div className='productList-box' key={name}>
-                <Link className="image" to={link}>
+                <Link className="image center" to={link}>
                     <img src={image} alt="" width="75px" height="75px" />
                 </Link>
                 <div>

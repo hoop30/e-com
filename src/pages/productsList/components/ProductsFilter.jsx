@@ -39,7 +39,7 @@ export function ProductsFilter() {
 
     return (
         <React.Fragment>
-            <ProductFilterBox isShowing={isShowing} />
+            <ProductFilterBox isShowing={isShowing} toggle={toggle}/>
             <button className='products-filter-btn' onClick={toggleSend}>
                 {btnContent}
             </button>

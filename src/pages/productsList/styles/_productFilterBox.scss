@@ -13,8 +13,33 @@
     &.fadeout {
         transform: none;
     }
+    
     &.fadein {
         transform: translateY(-100vh)
+    }
+
+    &>button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: none;
+        background: var(--grey);
+        
+        &>div {
+            transition: 0.3s ease-out;
+            color: var(--greydark);
+        }
+
+        &:hover {
+            
+            &>div {
+                transform: rotate(180deg);
+            }
+        }
+        
     }
 
     @media screen and (min-width: 1024px) {
