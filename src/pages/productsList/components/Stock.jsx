@@ -5,8 +5,8 @@ export function Stocks({ stock }) {
     let instock = ''
     
     stock > "0" ?
-        instock = <span className='span-stock instock'>EN STOCK</span>
-        : instock = <span className='span-stock not-instock'>RUPTURE</span>
+        instock = <span className='span-stock green'>EN STOCK</span>
+        : instock = <span className='span-stock grey-dark'>RUPTURE</span>
 
     return (
         <div className='stock'>

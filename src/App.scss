@@ -2,6 +2,7 @@
 @use 'styles/header/header';
 @use 'styles/footer/footer';
 @use 'styles/layout';
+@use 'styles/utils/searchResult';
 @use './pages/home/home';
 @use './pages/categorysList/categorysList';
 @use './pages/productsList/productList';
@@ -119,12 +120,12 @@ h2 {
 }
 
 .green {
-    color: green;
+    color: var(--green);
     font-weight: 600;
     width: 50px;
     text-align: center;
 }
-.greydark {
+.grey-dark {
     color: var(--greydark);
     font-weight: 600;
 }

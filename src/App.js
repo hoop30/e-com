@@ -13,7 +13,6 @@ import MobileMenuContextProvider from './context/MobileMenuContext'
 import 'react-slideshow-image/dist/styles.css'
 
 
-
 function App() {
 
     return (

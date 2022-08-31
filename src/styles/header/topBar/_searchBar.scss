@@ -4,6 +4,7 @@ form {
     height: 100%;
     display: grid;
     grid-template-columns: 90% 10%;
+    grid-template-rows: 100%;
     grid-template-areas: 
         "searchInput searchBtn";
 
@@ -13,22 +14,15 @@ form {
         background: var(--white);
         border: none;
         width: 100%;
-        height: 90%;
+        height: 100%;
 
         &:focus {
             outline: none;
         }
-
-        @media screen and (min-width: 480px) {
-            height: 100%;
-        }
-        @media screen and (min-width: 1024px) {
-            height: 50%;
-        }
     }
 
     &>.search-btn {
-        height: 90%;
+        height: 100%;
         grid-area: searchBtn;
         background: var(--white);
         border: none;
@@ -42,25 +36,9 @@ form {
                 filter: brightness(60%);
             }
         }
-
-        
-        @media screen and (min-width: 480px) {
-            height: 100%;
-        }
-        
-        @media screen and (min-width: 1024px) {
-            height: 50%;
-        }
     }
 
     @media screen and (min-width: 1024px) {
         align-items: center;
-
-        &.search-sticky {
-
-            &>.search-form, .search-btn {
-                height: 80%;
-            }
-        }
     }
 }

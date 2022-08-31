@@ -15,10 +15,8 @@ export function TopBar() {
                 <StickyBtn />
             </div>
 
-            <div className='searchbar'>
-                <SearchBar />
-            </div>
-
+            <SearchBar />
+            
             <div className='right'>
                 <MenuRight />
             </div>

@@ -33,7 +33,7 @@ export function ProductLayout({ location, products }) {
         
         stock > 0 ? 
             enStock = <p className='green'>EN STOCK</p> 
-            : enStock = <p className='greydark'>RUPTURE</p>
+            : enStock = <p className='grey-dark'>RUPTURE</p>
 
         return (
             <div className='Product-layout-box'>
