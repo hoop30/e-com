@@ -27,7 +27,6 @@ export function SearchBar() {
         setValue(e.target.value)
     }
     
-    console.log(research);
     return (
         <div className={search}>
             <form className='search'>
