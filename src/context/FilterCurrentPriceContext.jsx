@@ -4,7 +4,7 @@ export const FilterCurrentPriceContext = createContext()
 
 const FilterCurrentPriceContextProvider = (props) => {
 
-    const [FilterCurrentPrice, setFilterCurrentPrice] = useState(null)
+    const [FilterCurrentPrice, setFilterCurrentPrice] = useState('')
 
     function currentPriceChange(newPrice) {
         setFilterCurrentPrice(Number(newPrice))

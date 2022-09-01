@@ -9,7 +9,7 @@ import { FilterPriceContext } from '../../../context/FilterPriceContext'
 import { FilterCurrentPriceContext } from '../../../context/FilterCurrentPriceContext'
 
 
-export function ProductBox({ products, location }) {
+export function ProductBox({ products, location, sort }) {
 
     const { valueFilter } = useContext(FilterValueContext)
     const { ProductSetPrice } = useContext(FilterPriceContext)
@@ -36,7 +36,7 @@ export function ProductBox({ products, location }) {
 
                 if (price <= FilterCurrentPrice || FilterCurrentPrice === null) {
 
-                    const newProduct = <div className='productList-box' key={name}>
+                    const newProduct = <div className='productList-box' key={name} price={price}>
                         <Link className="image center" to={link}>
                             <img src={image} alt="" width="75px" height="75px" />
                         </Link>
@@ -63,6 +63,16 @@ export function ProductBox({ products, location }) {
         }
     })
 
+    if (sort !== null) {
+        if (sort === 'Nom') {
+            productsList.sort((a, b) => (a.key > b.key) - (a.key < b.key))
+        } else if (sort === 'price+') {
+            productsList.sort((a, b) => a.props.price - b.props.price)
+        } else if (sort === 'price-') {
+            productsList.sort((a, b) => b.props.price - a.props.price)
+        }
+    }
+    
     ProductSetPrice(prices)
     return productsList
 }

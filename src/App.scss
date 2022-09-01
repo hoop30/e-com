@@ -2,7 +2,6 @@
 @use 'styles/header/header';
 @use 'styles/footer/footer';
 @use 'styles/layout';
-@use 'styles/utils/searchResult';
 @use './pages/home/home';
 @use './pages/categorysList/categorysList';
 @use './pages/productsList/productList';
@@ -74,8 +73,7 @@ h2 {
     text-align: justify;
     color: var(--greydark);
 
-
-    &>button {
+    &>a {
         position: absolute;
         bottom: 3px;
         right: 0;
@@ -105,7 +103,7 @@ h2 {
         overflow: unset;
         height: auto;
 
-        &>button {
+        &>a {
             position: unset;
             background: transparent;
             padding-left: 3px;

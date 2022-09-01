@@ -26,11 +26,11 @@ export function CategorysList() {
                 <Breadcrumb location={location} categorys={categorys} />
                 <p className='top-text'>
                     L'informatique est partout aujourd'hui. Depuis les affichages publics en passant par votre salon, votre décodeur TV, et jusqu'à votre téléphone. FUTURE.com vous propose une immense sélection de produits afin de profiter de toutes les possibilités actuelles de l'informatique. Avec notre système de filtres complet vous trouverez facilement ce que vous cherchez et pourrez profiter de toute la puissance et de tout le confort de l'informatique moderne ! Nous vous proposons tout d'abord notre catégorie phare des pièces informatiques. Avec tous les produits que nous vous proposons vous pourrez créer votre système de toutes pièces, que vous ayez pour projet de
-                    … <button>Lire la suite</button>
+                    … <a href='#suite'>Lire la suite</a>
                 </p>
                 <CategorysSubList location={location} categorys={categorys} />
                 <TopVente location={location} categorys={categorys} products={products} />
-                <p className='bottom-text'>
+                <p className='bottom-text' id='suite'>
                     … monter un PC gamer, un PC de bureau, un Media center, un serveur, une station de travail ou bien un projet plus spécial encore ! Vous avez les idées mais pas le temps d'assembler ou installer votre système ? Nous le faisons pour vous !
                 </p>
                 <p className='bottom-text'>

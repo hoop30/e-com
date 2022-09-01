@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { IoSearchOutline } from "react-icons/io5"
 import { ScrollListener } from '../../../utils/ScrollListener'
 import { SearchObjetct } from "../../../utils/SearchObjetct"
-import { SearchResult } from '../../../utils/SearchResult'
+import { SearchResult } from './SearchResult'
 
 
 export function SearchBar() {

@@ -16,7 +16,6 @@ export function ProductFilterForm() {
     const [inputFormPriceStyle, setInputFormPriceStyle] = useState('form-input-price')
     const { handleSetValueFilter } = useContext(FilterValueContext)
     const { FilterPrice } = useContext(FilterPriceContext)
-    //const [curentPrice, setCurentPrice] = useState(null)
     const {FilterCurrentPrice, currentPriceChange} = useContext(FilterCurrentPriceContext)
     const [minPrice, setMinPrice] = useState('€')
     const [maxPrice, setMaxPrice] = useState('€')

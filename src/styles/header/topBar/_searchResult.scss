@@ -1,4 +1,4 @@
-@import '../mixin';
+@import '../../mixin';
 
 .search-result {
     background: var(--white);
@@ -11,8 +11,13 @@
         
         &>a {
             @include flex-center(none, center);
-            gap: 5px;
             color: var(--greydark);
+            
+            &>span {
+                @include flex-center(none, center);
+                gap: 5px;
+                color: var(--grey);
+            }
         }
     }
 }

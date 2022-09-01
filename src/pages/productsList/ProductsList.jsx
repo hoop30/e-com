@@ -33,13 +33,13 @@ export function ProductsList() {
                             <Breadcrumb location={location} categorys={categorys} />
                             <p className='top-text'>
                                 Vous êtes régulièrement en déplacement, vous n'aimez pas devoir utiliser un ordinateur autre que le vôtre, vous subissez des coupures de courant fréquentes, ou encore vous aimez pouvoir être sur votre ordinateur tout en étant installé dans votre canapé ou dans votre lit selon votre humeur ? Avec l'énorme gamme de modèles de PC portable LDLC.com vous pourrez facilement voir ces problèmes résolus sans rien sacrifier à la performance ou au confort d'utilisation de votre PC. Travailleur itinérant, vous avez besoin d'un ordinateur pour votre divertissement mais aussi pour communiquer et pour votre activité ! Nous avons un ensemble de …
-                                <button>Lire la suite</button>
+                                <a href='#suite'>Lire la suite</a>
                             </p>
                             <div className="product-layout">
                                 <ProductsFilter />
                                 <Products location={location} products={products} />
                             </div>
-                            <p className='bottom-text'>
+                            <p className='bottom-text' id='suite'>
                                 … PC portable Bureautique adapté à vos besoins, et ce à des prix tout à fait confortables ! Avec ces ordinateurs portables vous pourrez travailler, regarder un film ou consulter des sites Internet ou que vous vous trouviez (sous réserve de connexion internet disponible) !
                             </p>
                             <p className='bottom-text'>
