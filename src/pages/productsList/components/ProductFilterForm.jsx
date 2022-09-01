@@ -4,6 +4,8 @@ import { IoSearchOutline } from "react-icons/io5"
 import { IoIosArrowDown } from "react-icons/io"
 import { FilterValueContext } from '../../../context/FilterValueContext'
 import { FilterPriceContext } from '../../../context/FilterPriceContext'
+import { FilterCurrentPriceContext } from '../../../context/FilterCurrentPriceContext'
+import { FormatPrice } from '../../../utils/FormatPrice'
 
 
 export function ProductFilterForm() {
@@ -14,11 +16,11 @@ export function ProductFilterForm() {
     const [inputFormPriceStyle, setInputFormPriceStyle] = useState('form-input-price')
     const { handleSetValueFilter } = useContext(FilterValueContext)
     const { FilterPrice } = useContext(FilterPriceContext)
-    const [curentPrice, setCurentPrice] = useState(null)
+    //const [curentPrice, setCurentPrice] = useState(null)
+    const {FilterCurrentPrice, currentPriceChange} = useContext(FilterCurrentPriceContext)
     const [minPrice, setMinPrice] = useState('€')
     const [maxPrice, setMaxPrice] = useState('€')
 
-    //console.log(curentPrice);
     function openForm(e) {
         e.preventDefault()
         setFormPrice(!formPrice)
@@ -31,23 +33,25 @@ export function ProductFilterForm() {
             setInputFormPriceStyle('form-input-price')
         }
     }
-
+    
     function onRangeChange(e) {
+        
         setRangeValue(e.target.value)
-        console.log((e.target.value));
         const calc = minPrice + ((maxPrice - minPrice) * (e.target.valueAsNumber / 100))
-        if (e.target.value == 1) {
-            setCurentPrice(minPrice)
+        
+        if (e.target.value === 1) {
+            currentPriceChange(minPrice)
+            console.log(minPrice);
         } else {
-            setCurentPrice(calc.toFixed(2))
+            currentPriceChange(calc.toFixed(2))
         }
     }
 
     if (FilterPrice !== null) {
-        if(curentPrice === null || (minPrice !== FilterPrice[0] || maxPrice !== FilterPrice[FilterPrice.length - 1])) {
+        if(FilterCurrentPrice === null || (minPrice !== FilterPrice[0] || maxPrice !== FilterPrice[FilterPrice.length - 1])) {
             setMinPrice(FilterPrice[0])
             setMaxPrice(FilterPrice[FilterPrice.length - 1])
-            setCurentPrice(FilterPrice[FilterPrice.length - 1])
+            currentPriceChange(FilterPrice[FilterPrice.length - 1])
         }
     }
 
@@ -58,31 +62,31 @@ export function ProductFilterForm() {
                 <label htmlFor="designation">CHERCHER UNE RÉFÉRENCE</label>
                 <div className='input-search'>
                     <input id='designation' type="text" placeholder='Désignation, modèle ...' onKeyUp={handleSetValueFilter}/>
-                    <button>
+                    <div className='search-logo center'>
                         <IoSearchOutline size="1.5em" color='grey' id='searchBtn' />
-                    </button>
+                    </div>
                 </div>
             </div>
             <div className='form form-price'>
-                <div className='label-price'>
+                <div className='label-price' onClick={openForm}>
                     <div>
                         <label htmlFor="price">Prix</label>
                         <span>En €</span>
                     </div>
                     <div>
-                        <button className={btnFormPriceStyle} onClick={openForm}>
+                        <button className={btnFormPriceStyle}>
                             <IoIosArrowDown size="2em"/>
                         </button>
                     </div>
                 </div>
                 <div className={inputFormPriceStyle}>
                     <div className='min-max'>
-                        <span>{minPrice}</span>
-                        <span>{maxPrice}</span>
+                        <FormatPrice price={minPrice}/>
+                        <FormatPrice price={maxPrice}/>
                     </div>
                     <input id='price' type="range" min="1" max="100" value={rangeValue} placeholder='Désignation, modèle ...' step="0.01" onChange={onRangeChange}/>
                     <div className='current-price'>
-                        <p>{curentPrice}</p>
+                        <FormatPrice price={FilterCurrentPrice}/>
                     </div>
                 </div>
             </div>
