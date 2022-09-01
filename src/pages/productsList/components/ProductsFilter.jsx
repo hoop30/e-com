@@ -27,14 +27,9 @@ export function ProductsFilter() {
     function toggleSend() {
         if (isShowing) {
             toggle()
-            send()
         } else {
             toggle()
         }
-    }
-
-    function send() {
-        console.log('send form')
     }
 
     return (

@@ -2,6 +2,7 @@ import React from 'react'
 import { FormatPrice } from '../../../utils/FormatPrice'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { IoFlashOutline } from 'react-icons/io5'
+import { FetchAddToCart } from '../../../lib/FetchAddToCart'
 
 export function ProductLayout({ location, products }) {
 
@@ -11,6 +12,10 @@ export function ProductLayout({ location, products }) {
             currentProduct = product
         }
     })
+    
+    function add() {
+        FetchAddToCart(currentProduct.id)
+    }
 
     if (currentProduct !== '') {
         const name = currentProduct.name
@@ -41,7 +46,7 @@ export function ProductLayout({ location, products }) {
                 <img src={image} alt="" width="300px" height="300px" />
                 <div className="price-stock">
                     <FormatPrice price={price} className="price" />
-                    <button className='cart'>
+                    <button className='add-to-cart' onClick={add}>
                         <MdOutlineAddShoppingCart size="2em" />
                         <p>AJOUTER AU PANIER</p>
                     </button>

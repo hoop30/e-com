@@ -42,12 +42,14 @@
             width: 245px;
             max-width: 100%;
 
-            &.cart {
+            &.add-to-cart {
                 background: var(--darkorange);
+                cursor: pointer;
             }
 
             &.buy {
                 background: var(--main);
+                cursor: pointer;
             }
         }
 

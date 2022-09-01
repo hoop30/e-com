@@ -1,0 +1,65 @@
+@use './styles/cartList';
+
+@import '../../styles/mixin';
+
+.cart {
+    position: fixed;
+    z-index: 150;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    animation: fadeIn 0.3s ease-out;
+    @include flex-center(none, center, column);
+    gap: 30px;
+    padding: 30px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    &>button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: none;
+        background: var(--grey);
+        
+        &>div {
+            transition: 0.3s ease-out;
+            color: var(--greydark);
+        }
+
+        &:hover {
+            
+            &>div {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &>table {
+        width: 90%;
+        border-collapse: collapse;
+
+        &>thead {
+            color: var(--greydark);
+            
+            &>th {
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 480px) {
+        min-width: 480px;
+        max-width: 700px;
+        width: 60%;
+    }
+}
+
+@keyframes fadeIn { 
+    from { right: -100vw; } 
+    to { right: 0; }  
+}

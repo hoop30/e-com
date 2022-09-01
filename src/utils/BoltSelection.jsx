@@ -6,7 +6,6 @@ export function BoltSelection(text, research) {
     const researchSplit = research.split('')
 
     for (const aKey in tableText) {
-        console.log(typeof tableText[aKey]);
         
         for (const bKey in researchSplit) {
                 
