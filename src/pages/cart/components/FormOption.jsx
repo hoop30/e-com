@@ -2,7 +2,10 @@ import React from 'react'
 
 export function FormOption({quantity}) {
     let option = []
-    for (let i = 0; i < 5; i++) {
+    let optionNumber = 5
+    quantity < 5 ?  optionNumber = 5 : optionNumber = quantity
+
+    for (let i = 0; i <= optionNumber; i++) {
         if (quantity === i) {
             const newOption = <option value={i} selected>{i}</option>
 

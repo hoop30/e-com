@@ -17,3 +17,16 @@
         padding: 10px 20px;
     }
 }
+
+.loading-product {
+    height: 100vh;
+    background: var(--white);
+
+    @media screen and (min-width: 480px) {
+        background: var(--grey);
+    }
+
+    @media screen and (min-width: 1024px) {
+        height: 450px;
+    }
+}

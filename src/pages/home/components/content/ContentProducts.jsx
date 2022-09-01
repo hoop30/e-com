@@ -5,6 +5,7 @@ import { FetchProducts } from '../../../../lib/FetchProducts'
 import { Loading } from '../../../../layout/Loading'
 import { Link } from 'react-router-dom'
 import { NormLink } from '../../../../utils/NormLink'
+import { FetchAddToCart } from '../../../../lib/FetchAddToCart'
 
 
 export function ContentProducts({ number }) {
@@ -14,11 +15,26 @@ export function ContentProducts({ number }) {
         FetchProducts(setProducts);
     }, []);
 
+    function add(e) {
+        let id
+
+        if (e.target.id !== '') {
+            id = e.target.id
+        } else if (e.target.parentNode.id !== '') {
+            id = e.target.parentNode.id
+        } else {
+            id = e.target.parentNode.parentNode.id
+        }
+
+        FetchAddToCart(id)
+    }
+
     if (products !== undefined) {
         const name = products[number].name
         const image = products[number].image.url
         const price = products[number].price.raw
         const link = NormLink('Product', name)
+        const id = products[number].id
 
         return (
             <div className='product-slide'>
@@ -29,7 +45,7 @@ export function ContentProducts({ number }) {
                     <Link to={link} className='product-name'>{name}</Link>
                     <div className='price'>
                         <FormatPrice className='product-price' price={price} />
-                        <button>
+                        <button id={id} onClick={add}>
                             <MdOutlineAddShoppingCart size="2em" />
                         </button>
                     </div>

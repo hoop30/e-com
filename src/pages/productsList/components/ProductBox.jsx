@@ -7,6 +7,8 @@ import { NormLink } from '../../../utils/NormLink'
 import { FilterValueContext } from '../../../context/FilterValueContext'
 import { FilterPriceContext } from '../../../context/FilterPriceContext'
 import { FilterCurrentPriceContext } from '../../../context/FilterCurrentPriceContext'
+import { FetchAddToCart } from '../../../lib/FetchAddToCart'
+
 
 
 export function ProductBox({ products, location, sort }) {
@@ -18,6 +20,19 @@ export function ProductBox({ products, location, sort }) {
     let prices = []
     let productsList = []
 
+    function add(e) {
+        let id
+
+        if (e.target.id !== '') {
+            id = e.target.id
+        } else if (e.target.parentNode.id !== '') {
+            id = e.target.parentNode.id
+        } else {
+            id = e.target.parentNode.parentNode.id
+        }
+
+        FetchAddToCart(id)
+    }
 
     products.forEach(product => {
 
@@ -29,7 +44,8 @@ export function ProductBox({ products, location, sort }) {
         const stock = product.inventory.available
         const link = NormLink('Product', name)
         const price = product.price.raw
-        
+        const id = product.id
+
         if (normCatProduct === location) {
 
             if (valueFilter === '' || product.name.toLowerCase().includes(valueFilter)) {
@@ -49,7 +65,7 @@ export function ProductBox({ products, location, sort }) {
                             </div>
                             <div className="price">
                                 <FormatPrice price={price} />
-                                <button>
+                                <button id={id} onClick={add}>
                                     <MdOutlineAddShoppingCart size="2em" />
                                 </button>
                             </div>

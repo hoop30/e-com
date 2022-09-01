@@ -3,6 +3,8 @@ import { FormatPrice } from '../../../utils/FormatPrice'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { IoFlashOutline } from 'react-icons/io5'
 import { FetchAddToCart } from '../../../lib/FetchAddToCart'
+import { Loading } from '../../../layout/Loading'
+
 
 export function ProductLayout({ location, products }) {
 
@@ -64,6 +66,13 @@ export function ProductLayout({ location, products }) {
                 <div className="desc">
                     {desc}
                 </div>
+            </div>
+        )
+        
+    } else {
+        return (
+            <div className='Product-layout-box'>
+                <Loading />
             </div>
         )
     }

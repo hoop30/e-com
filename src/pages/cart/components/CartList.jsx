@@ -3,7 +3,7 @@ import { VscChromeClose } from 'react-icons/vsc'
 import { FormatPrice } from '../../../utils/FormatPrice'
 import { FormOption } from './FormOption'
 
-export function CartList({ cart, remove }) {
+export function CartList({ cart, remove, update }) {
 
     let cartList = []
 
@@ -25,7 +25,7 @@ export function CartList({ cart, remove }) {
                         <td className='name'>{name}</td>
                         <td className='price'><FormatPrice price={price} /></td>
                         <td className='quantity'>
-                            <select name="quantity" id="quantity">
+                            <select name="quantity" id={id} onChange={update}>
                                 <FormOption quantity={quantity}/>
                             </select>
                         </td>

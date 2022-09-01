@@ -18,12 +18,19 @@ export function Product() {
     }, [])
 
     if (location !== undefined && products !== undefined) {
+        
         return (
             <div className='products-page'>
                 <div className="product-page-box">
                     <Breadcrumb location={location} products={products} />
                     <ProductLayout location={location} products={products} />
                 </div>
+            </div>
+        )     
+    } else {
+        
+        return (
+            <div className='loading-product'>
             </div>
         )
     }

@@ -38,6 +38,7 @@
             border-radius: 0;
             border: solid 1px var(--grey);
             background: var(--white);
+            cursor: pointer;
         }
     }
 
@@ -52,6 +53,7 @@
 
     &>.remove {
         text-align: center;
+        cursor: pointer;
     }
     &>td {
         text-align: end;

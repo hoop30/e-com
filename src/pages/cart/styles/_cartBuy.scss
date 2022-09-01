@@ -1,0 +1,33 @@
+@import '../../../styles/mixin';
+
+.cart-buy {
+    position: absolute;
+    bottom: 0;
+    background: var(--pale);
+    width: 100%;
+    height: 18vh;
+    @include flex-center(none, center, column);
+    padding: 15px;
+
+    &>h2 {
+        padding-bottom: 15px;
+    }
+    &>p {
+        border-top: solid 2px var(--white);
+        padding: 10px 20%;
+        color: var(--main);
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+
+    &>button {
+        background: var(--main);
+        border: none;
+        border-radius: 50px;
+        padding: 10px 25px;
+        color: var(--white);
+        font-weight: 600;
+        font-size: 1.2em;
+        cursor: pointer;
+    }
+}

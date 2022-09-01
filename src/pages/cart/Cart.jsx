@@ -5,16 +5,23 @@ import { CartList } from './components/CartList'
 import { VscChromeClose } from 'react-icons/vsc'
 import { FaRegTrashAlt } from 'react-icons/fa'
 import { FetchRemoveToCart } from '../../lib/FetchRemoveToCart'
+import { FetchUpdateCart } from '../../lib/FetchUpdateCart'
+import { CartBuy } from './components/CartBuy'
 
 
 export function Cart({ isModalShowing, toggle }) {
 
     const [cart, setCart] = useState()
+    let total = ''
     let newCart
 
     useEffect(() => {
         FetchRetriveCart(setCart);
     }, [cart]);
+
+    if (cart !== undefined) {
+        total = cart.subtotal.raw
+    }
 
     function remove(e) {
         let id
@@ -31,27 +38,33 @@ export function Cart({ isModalShowing, toggle }) {
         FetchRetriveCart(setCart)
     }
 
+    function update(e) {
+        FetchUpdateCart(e.target.id, e.target.selectedIndex)
+    }
+
     isModalShowing ?
         newCart = ReactDOM.createPortal(
-            <div className='cart'>
-                <h2>Panier</h2>
-                <table>
-                    <thead>
-                        <th></th>
-                        <th>Produits</th>
-                        <th>Prix</th>
-                        <th>Quantité</th>
-                        <th>Total</th>
-                        <th><FaRegTrashAlt /></th>
-                    </thead>
-                    <CartList cart={cart} remove={remove} />
-                </table>
-
-                <button onClick={toggle}>
-                    <div className="center">
-                        <VscChromeClose size="2.5em" />
-                    </div>
-                </button>
+            <div className="overlay">
+                <div className='cart'>
+                    <h2>Panier</h2>
+                    <table>
+                        <thead>
+                            <th></th>
+                            <th>Produits</th>
+                            <th>Prix</th>
+                            <th>Quantité</th>
+                            <th>Total</th>
+                            <th><FaRegTrashAlt /></th>
+                        </thead>
+                        <CartList cart={cart} remove={remove} update={update} />
+                    </table>
+                    <CartBuy total={total} />
+                    <button onClick={toggle}>
+                        <div className="center">
+                            <VscChromeClose size="2.5em" />
+                        </div>
+                    </button>
+                </div>
             </div>, document.body
         )
         : newCart = null
