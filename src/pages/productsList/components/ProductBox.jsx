@@ -32,6 +32,13 @@ export function ProductBox({ products, location, sort }) {
         }
 
         FetchAddToCart(id)
+        const blur = setInterval(() => {
+            console.log(e.target);
+            e.target.blur()
+            e.target.parentNode.blur()
+            e.target.parentNode.parentNode.blur()
+            clearInterval(blur)
+        }, 1500)
     }
 
     products.forEach(product => {
@@ -65,7 +72,10 @@ export function ProductBox({ products, location, sort }) {
                             </div>
                             <div className="price">
                                 <FormatPrice price={price} />
-                                <button id={id} onClick={add}>
+                                <button id={id}>
+                                    <MdOutlineAddShoppingCart size="2em" />
+                                </button>
+                                <button id={id} onClick={add} className='action-cart productsList-page'>
                                     <MdOutlineAddShoppingCart size="2em" />
                                 </button>
                             </div>

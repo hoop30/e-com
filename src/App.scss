@@ -128,3 +128,63 @@ h2 {
     color: var(--greydark);
     font-weight: 600;
 }
+
+.action-cart {
+    position: absolute;
+    right: 0;
+    width: 100px;
+    background: transparent;
+    opacity: 0;
+    transition: width 0.3s 0.3s ease-out;
+    cursor: pointer;
+
+    &>svg {
+        color: var(--dark);
+    }
+
+    
+    &:focus {
+        background: var(--white);
+        width: 40px;
+        padding: 0;
+        opacity: 0;
+        animation: opacity 1.5s ease-in;
+    }
+    @media screen and (min-width: 480px) {
+        
+    }
+
+    @media screen and (min-width: 770px) {
+        
+        &.productsList-page {
+            top: 55px;
+            right: 50px;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+
+        &>.product-page {
+            top: 86px;
+        }
+        &.productsList-page {
+            top: 55px;
+            right: 37px;
+        }
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    20% {
+        opacity: 100;
+    }
+    66% {
+        opacity: 100;
+    }
+    to {
+        opacity: 0;
+    }
+}

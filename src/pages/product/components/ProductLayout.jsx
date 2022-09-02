@@ -15,8 +15,14 @@ export function ProductLayout({ location, products }) {
         }
     })
     
-    function add() {
+    function add(e) {
         FetchAddToCart(currentProduct.id)
+        const blur = setInterval(() => {
+            e.target.blur()
+            e.target.parentNode.blur()
+            e.target.parentNode.parentNode.blur()
+            clearInterval(blur)
+        }, 1500)
     }
 
     if (currentProduct !== '') {
@@ -48,9 +54,12 @@ export function ProductLayout({ location, products }) {
                 <img src={image} alt="" width="300px" height="300px" />
                 <div className="price-stock">
                     <FormatPrice price={price} className="price" />
-                    <button className='add-to-cart' onClick={add}>
+                    <button className='add-to-cart'>
                         <MdOutlineAddShoppingCart size="2em" />
                         <p>AJOUTER AU PANIER</p>
+                    </button>
+                    <button id='add-to-cart-action' onClick={add} className="product-page">
+                        <MdOutlineAddShoppingCart size="2em" />
                     </button>
                     <button className='buy'>
                         <IoFlashOutline size="2em" />

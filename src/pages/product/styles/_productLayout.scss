@@ -18,7 +18,8 @@
     }
 
     &>.price-stock {
-        @include flex-center(none, center, column);
+        @include flex-center(center, center, column);
+        position: relative;
         gap: 10px;
         background: var(--pale);
         width: 100%;
@@ -107,3 +108,30 @@
         }
     }
 }
+
+#add-to-cart-action {
+    position: absolute;
+    top: 74px;
+    background: transparent;
+    opacity: 0;
+    transition: width 0.3s 0.3s ease-out ;
+    justify-content: center;
+
+    &>svg {
+        color: var(--dark);
+    }
+
+    &:focus {
+        background: var(--white);
+        width: 40px;
+        padding: 0;
+        opacity: 0;
+        animation: opacity 1.5s ease-in;
+    }
+
+
+    @media screen and (min-width: 1024px) {
+        top: 86px;
+    }
+}
+

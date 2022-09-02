@@ -27,7 +27,8 @@
     &>div {
         @include flex-center(none, none, column);
         gap: 10px;
-        width: 80%;
+        width: 100%;
+        padding-right: 20px;
 
         &>.name-stock {
             @include flex-center(center, none, column);
@@ -44,6 +45,7 @@
         }
 
         &>.price {
+            position: relative;
             @include flex-center(space-between, center);
             width: 100%;
             color: var(--main);
@@ -72,7 +74,7 @@
             &>.price {
                 @include flex-center(center, center, column);
                 gap: 20px;
-                width: auto;
+                width: 150px;
                 padding-left: 10px;
             }
         }

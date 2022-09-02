@@ -29,6 +29,13 @@ export function ProductDiv({ subProduct, number }) {
                 }
         
                 FetchAddToCart(id)
+                const blur = setInterval(() => {
+                    console.log(e.target);
+                    e.target.blur()
+                    e.target.parentNode.blur()
+                    e.target.parentNode.parentNode.blur()
+                    clearInterval(blur)
+                }, 1500)
             }
 
             return (
@@ -40,7 +47,10 @@ export function ProductDiv({ subProduct, number }) {
                         <Link to={link} className='product-name'>{name}</Link>
                         <div className='price'>
                             <FormatPrice className='product-price' price={price} />
-                            <button id={id} onClick={add}>
+                            <button id={id}>
+                                <MdOutlineAddShoppingCart size="2em" />
+                            </button>
+                            <button id={id} onClick={add} className='action-cart'>
                                 <MdOutlineAddShoppingCart size="2em" />
                             </button>
                         </div>
