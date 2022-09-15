@@ -22,7 +22,7 @@ function App() {
                 </DescktopMenuContextProvider>
             </MobileMenuContextProvider>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/e-com/" element={<Home />} />
                 <Route path="ProductsList" element={<ProductsList />} />
                 <Route path="CategorysList" element={<CategorysList />} />
                 <Route path="Product" element={<Product />} />

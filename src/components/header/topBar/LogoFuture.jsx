@@ -11,7 +11,7 @@ export function LogoFuture() {
     ScrollListener(setLogoFuture, "logo-future", "logo-future logo-sticky")
 
     return (
-        <Link to="/" className={logoFuture}>
+        <Link to="/e-com/" className={logoFuture}>
             <img src={logo} alt="logo Future" width="80" height="80" />
         </Link>
     )

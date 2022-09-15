@@ -6,7 +6,7 @@ import { RiHome2Line } from 'react-icons/ri'
 export function ReturnBtn() {
     return (
         <div className='breadcrumb-return-btn'>
-            <Link to={'/'}>
+            <Link to={'/e-com/'}>
                 <div className="breadcrumb-mobile-btn">
                     <IoIosArrowBack size='0.9em' />
                     Retour
