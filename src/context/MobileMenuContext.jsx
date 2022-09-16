@@ -4,10 +4,11 @@ export const MobileMenuContext = createContext()
 
 const MenuHiddenContextProvider = (props) => {
 
-    const [mobileMenu, setMobileMenu] = useState(false)
+    const [mobileMenu, setMobileMenu] = useState(true)
     const [btnClass, setBtnClass] = useState("menu-btn")
     const [productsMenuClass, setProductsMenuClass] = useState("products-menu hidden")
 
+    console.log(mobileMenu);
     function toggle(toggle = true) {
         if (toggle) {
             setMobileMenu(!mobileMenu)
