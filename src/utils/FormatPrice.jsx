@@ -10,5 +10,5 @@ export function FormatPrice({price, className = ""}) {
         splitPrice[1] = splitPrice[1] + '0'
     }
     
-    return <p className={className}>{splitPrice[0]}€<sup>{splitPrice[1]}</sup></p>
+    return <p className={className}  data-testid="test">{splitPrice[0]}€<sup>{splitPrice[1]}</sup></p>
 }
