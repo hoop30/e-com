@@ -1,15 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import {FetchProducts} from '../lib/FetchProducts'
 import {FetchCategorys} from '../lib/FetchCategorys'
 
-export function SearchObjetct() {
-    const [categorys, setCategorys] = useState()
-    const [products, setProducts] = useState()
+
+export async function SearchObjetct() {
     
-    useEffect(() => {
-        FetchCategorys(setCategorys);
-        FetchProducts(setProducts);
-    }, []);
+    const categorys = await FetchCategorys()
+    const products = await FetchProducts()
 
     let object = []
     if (products !== undefined && categorys !== undefined) {
